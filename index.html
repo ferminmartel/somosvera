@@ -1,0 +1,1503 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VERA — Cuidado Ancestral</title>
+  <meta name="description" content="Bálsamo anhidro multipropósito con Tallow Bovino Purificado. Sin químicos. Solo dos ingredientes. Hecho a mano en Córdoba, Argentina.">
+
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ──────────────────────────────────────────────
+       RESET & BASE
+    ────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream:       #F0EDE6;
+      --cream-dark:  #E4DFD6;
+      --concrete:    #D8D4CC;
+      --concrete-bg: #ECEAE4;
+      --charcoal:    #2E2B27;
+      --bronze:      #4A4137;
+      --bronze-mid:  #7A6A55;
+      --gold:        #B8973A;
+      --gold-light:  #D4B96A;
+      --white-warm:  #FAF8F4;
+      --dark-bg:     #262320;
+
+      --serif:  'Cormorant Garamond', Georgia, serif;
+      --sans:   'Montserrat', Arial, sans-serif;
+
+      --max-w: 1100px;
+      --radius: 2px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      background-color: var(--cream);
+      color: var(--charcoal);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    img { display: block; width: 100%; }
+
+    /* ──────────────────────────────────────────────
+       NAVIGATION
+    ────────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 18px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(240, 237, 230, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(74, 65, 55, 0.12);
+      transition: padding 0.3s ease;
+    }
+
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 1.6rem;
+      font-weight: 600;
+      letter-spacing: 0.28em;
+      color: var(--bronze);
+      text-decoration: none;
+    }
+
+    .nav-tagline {
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--bronze-mid);
+    }
+
+    /* ──────────────────────────────────────────────
+       HERO
+       → Imagen: img_hero.jpg (lata en lino)
+    ────────────────────────────────────────────── */
+    #hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+      overflow: hidden;
+      background-color: #C8C0B0;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('img_hero.png');
+      background-size: cover;
+      background-position: center 40%;
+      transform: scale(1.04);
+      transition: transform 8s ease;
+    }
+
+    #hero:hover .hero-bg { transform: scale(1.0); }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      /* Strong dark base + heavier on the left where text sits */
+      background:
+        linear-gradient(to right,  rgba(20,17,14,0.82) 0%, rgba(20,17,14,0.55) 55%, rgba(20,17,14,0.15) 100%),
+        linear-gradient(to bottom, rgba(20,17,14,0.25) 0%, rgba(20,17,14,0.55) 60%, rgba(20,17,14,0.85) 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 0 60px 80px;
+      max-width: 720px;
+    }
+
+    .hero-brand-label {
+      font-family: var(--sans);
+      font-size: 0.62rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 18px;
+      display: block;
+    }
+
+    .hero-title {
+      font-family: var(--serif);
+      font-size: clamp(4rem, 10vw, 7.5rem);
+      font-weight: 300;
+      letter-spacing: 0.18em;
+      line-height: 0.9;
+      color: var(--white-warm);
+      margin-bottom: 8px;
+    }
+
+    .hero-subtitle {
+      font-family: var(--serif);
+      font-size: clamp(0.85rem, 1.5vw, 1rem);
+      font-weight: 300;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 32px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid rgba(212, 185, 106, 0.35);
+    }
+
+    .hero-body {
+      font-family: var(--serif);
+      font-size: clamp(1.1rem, 2.2vw, 1.45rem);
+      font-weight: 300;
+      line-height: 1.65;
+      color: rgba(250, 248, 244, 0.9);
+      margin-bottom: 10px;
+    }
+
+    .hero-body-small {
+      font-family: var(--sans);
+      font-size: 0.78rem;
+      font-weight: 300;
+      letter-spacing: 0.06em;
+      line-height: 1.75;
+      color: rgba(250, 248, 244, 0.68);
+      margin-bottom: 40px;
+      max-width: 480px;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      font-family: var(--sans);
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--dark-bg);
+      background: var(--gold-light);
+      border: none;
+      padding: 16px 38px;
+      cursor: pointer;
+      text-decoration: none;
+      border-radius: var(--radius);
+      transition: background 0.25s ease, letter-spacing 0.25s ease;
+    }
+
+    .btn-primary:hover {
+      background: var(--gold);
+      letter-spacing: 0.24em;
+    }
+
+    /* ── PRODUCT SHOWCASE ── */
+    #producto {
+      background: var(--cream-dark);
+      padding: 0;
+    }
+
+    .producto-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 540px;
+    }
+
+    .producto-img-wrap {
+      background: #E8E4DC;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px;
+      overflow: hidden;
+    }
+
+    .producto-img-wrap img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 20px 48px rgba(38,35,32,0.22));
+      transition: transform 0.6s ease;
+    }
+
+    .producto-img-wrap:hover img {
+      transform: scale(1.03) rotate(1deg);
+    }
+
+    .producto-content {
+      background: var(--charcoal);
+      padding: 70px 64px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .producto-content .section-label { color: var(--gold); }
+    .producto-content .section-title { color: var(--white-warm); }
+
+    .producto-detail {
+      font-family: var(--sans);
+      font-size: 0.75rem;
+      font-weight: 300;
+      line-height: 1.95;
+      color: rgba(250, 248, 244, 0.55);
+      margin-top: 20px;
+    }
+
+    .producto-specs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: rgba(250,248,244,0.08);
+      margin-top: 36px;
+    }
+
+    .spec-item {
+      background: rgba(38,35,32,0.9);
+      padding: 18px 20px;
+    }
+
+    .spec-label {
+      font-family: var(--sans);
+      font-size: 0.55rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .spec-value {
+      font-family: var(--serif);
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: var(--white-warm);
+    }
+
+    @media (max-width: 900px) {
+      .producto-grid { grid-template-columns: 1fr; }
+      .producto-img-wrap { padding: 48px 40px; min-height: 320px; }
+      .producto-content { padding: 48px 32px; }
+      .producto-specs { grid-template-columns: 1fr 1fr; }
+    }
+
+    .btn-outline {
+      display: inline-block;
+      font-family: var(--sans);
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--white-warm);
+      background: transparent;
+      border: 1px solid rgba(250, 248, 244, 0.5);
+      padding: 15px 36px;
+      cursor: pointer;
+      text-decoration: none;
+      border-radius: var(--radius);
+      transition: all 0.25s ease;
+    }
+
+    .btn-outline:hover {
+      background: rgba(250, 248, 244, 0.1);
+      border-color: var(--gold-light);
+      color: var(--gold-light);
+    }
+
+    /* ──────────────────────────────────────────────
+       SECTION BASE STYLES
+    ────────────────────────────────────────────── */
+    section { padding: 100px 40px; }
+
+    .section-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+
+    .section-label {
+      display: block;
+      font-family: var(--sans);
+      font-size: 0.6rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4.5vw, 3.4rem);
+      font-weight: 300;
+      letter-spacing: 0.05em;
+      line-height: 1.15;
+      color: var(--bronze);
+      margin-bottom: 28px;
+    }
+
+    .section-text {
+      font-family: var(--sans);
+      font-size: 0.82rem;
+      font-weight: 300;
+      line-height: 1.9;
+      color: var(--bronze-mid);
+      max-width: 620px;
+    }
+
+    .divider {
+      width: 48px;
+      height: 1px;
+      background: var(--gold);
+      margin: 28px 0;
+    }
+
+    /* ──────────────────────────────────────────────
+       SECTION 1 — EL SECRETO BIOCOMPATIBLE
+    ────────────────────────────────────────────── */
+    #secreto {
+      background-color: var(--white-warm);
+    }
+
+    .secreto-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .secreto-stat {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 36px;
+      background: var(--cream);
+      border-left: 2px solid var(--gold);
+    }
+
+    .secreto-stat-number {
+      font-family: var(--serif);
+      font-size: 3.5rem;
+      font-weight: 300;
+      color: var(--bronze);
+      line-height: 1;
+    }
+
+    .secreto-stat-label {
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--bronze-mid);
+    }
+
+    .secreto-stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 48px;
+    }
+
+    .highlight-box {
+      background: var(--cream-dark);
+      border: 1px solid rgba(184, 151, 58, 0.25);
+      padding: 32px;
+      margin-top: 40px;
+    }
+
+    .highlight-box p {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.75;
+      color: var(--bronze);
+    }
+
+    /* ──────────────────────────────────────────────
+       SECTION 2 — LA FÓRMULA
+       → Imagen: img_formula.jpg (eucalipto + textura)
+    ────────────────────────────────────────────── */
+    #formula {
+      background-color: var(--concrete-bg);
+      padding: 0;
+    }
+
+    .formula-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 600px;
+    }
+
+    .formula-img {
+      position: relative;
+      overflow: hidden;
+      background-color: #C8C4BC;
+    }
+
+    .formula-img img {
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform 6s ease;
+    }
+
+    .formula-img:hover img { transform: scale(1.04); }
+
+    .formula-content {
+      padding: 80px 70px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: var(--concrete-bg);
+    }
+
+    .ingredient-list {
+      list-style: none;
+      margin: 36px 0;
+    }
+
+    .ingredient-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      padding: 22px 0;
+      border-bottom: 1px solid rgba(74, 65, 55, 0.12);
+    }
+
+    .ingredient-list li:first-child {
+      border-top: 1px solid rgba(74, 65, 55, 0.12);
+    }
+
+    .ingredient-number {
+      font-family: var(--serif);
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: var(--gold);
+      line-height: 1;
+      min-width: 28px;
+      padding-top: 2px;
+    }
+
+    .ingredient-name {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--bronze);
+      margin-bottom: 4px;
+    }
+
+    .ingredient-desc {
+      font-family: var(--sans);
+      font-size: 0.7rem;
+      font-weight: 300;
+      color: var(--bronze-mid);
+      line-height: 1.6;
+    }
+
+    .formula-close {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--bronze-mid);
+      padding: 24px 0 0;
+      border-top: 1px solid rgba(184, 151, 58, 0.3);
+    }
+
+    /* ──────────────────────────────────────────────
+       SECTION 3 — BENEFICIOS
+    ────────────────────────────────────────────── */
+    #beneficios {
+      background-color: var(--cream);
+    }
+
+    .beneficios-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+
+    .beneficios-header .section-label {
+      display: block;
+      text-align: center;
+    }
+
+    .beneficios-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      background: rgba(74, 65, 55, 0.12);
+    }
+
+    .beneficio-card {
+      background: var(--cream);
+      padding: 48px 36px;
+      text-align: center;
+      transition: background 0.25s ease;
+    }
+
+    .beneficio-card:hover {
+      background: var(--white-warm);
+    }
+
+    .beneficio-icon {
+      font-family: var(--serif);
+      font-size: 2.2rem;
+      font-weight: 300;
+      color: var(--gold);
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .beneficio-title {
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--bronze);
+      line-height: 1.5;
+    }
+
+    /* ──────────────────────────────────────────────
+       SECTION 4 — HECHO EN CÓRDOBA
+       → Imagen: img_cordoba.jpg (taller boticario)
+    ────────────────────────────────────────────── */
+    #cordoba {
+      padding: 0;
+      position: relative;
+      min-height: 500px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .cordoba-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('img_cordoba.png');
+      background-size: cover;
+      background-position: center 30%;
+      filter: brightness(0.55);
+    }
+
+    .cordoba-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(38, 35, 32, 0.45);
+    }
+
+    .cordoba-content {
+      position: relative;
+      z-index: 2;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 100px 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      width: 100%;
+    }
+
+    .cordoba-text .section-label { color: var(--gold-light); }
+
+    .cordoba-text .section-title {
+      color: var(--white-warm);
+    }
+
+    .cordoba-body {
+      font-family: var(--sans);
+      font-size: 0.82rem;
+      font-weight: 300;
+      line-height: 2;
+      color: rgba(250, 248, 244, 0.78);
+      max-width: 480px;
+    }
+
+    .cordoba-detail {
+      text-align: right;
+    }
+
+    .cordoba-quote {
+      font-family: var(--serif);
+      font-size: clamp(1.4rem, 3vw, 2.2rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--gold-light);
+      line-height: 1.5;
+      text-align: right;
+    }
+
+    .cordoba-attr {
+      display: block;
+      font-family: var(--sans);
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(212, 185, 106, 0.6);
+      margin-top: 16px;
+      text-align: right;
+    }
+
+    /* ──────────────────────────────────────────────
+       SECTION 5 — ÚNETE / CTA / PRECIO
+    ────────────────────────────────────────────── */
+    #cta {
+      background-color: var(--dark-bg);
+      text-align: center;
+    }
+
+    #cta .section-label { color: var(--gold); display: block; text-align: center; }
+    #cta .section-title { color: var(--white-warm); text-align: center; margin: 0 auto 16px; max-width: 700px; }
+
+    .cta-body {
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      font-weight: 300;
+      line-height: 1.9;
+      color: rgba(250, 248, 244, 0.6);
+      max-width: 560px;
+      margin: 0 auto 52px;
+    }
+
+    .stock-badge {
+      display: inline-block;
+      font-family: var(--sans);
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      border: 1px solid rgba(212, 185, 106, 0.4);
+      padding: 6px 18px;
+      margin-bottom: 48px;
+    }
+
+    .price-block {
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+
+    .price-original {
+      font-family: var(--serif);
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: rgba(250, 248, 244, 0.28);
+      text-decoration: line-through;
+      text-decoration-color: rgba(250, 248, 244, 0.2);
+    }
+
+    .price-label {
+      font-family: var(--sans);
+      font-size: 0.55rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(250, 248, 244, 0.35);
+      display: block;
+      text-align: right;
+      margin-bottom: 3px;
+    }
+
+    .price-new-wrap {
+      text-align: center;
+    }
+
+    .price-new-label {
+      font-family: var(--sans);
+      font-size: 0.55rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .price-new {
+      font-family: var(--serif);
+      font-size: 3.2rem;
+      font-weight: 300;
+      color: var(--white-warm);
+      line-height: 1;
+    }
+
+    .cta-disclaimer {
+      display: block;
+      font-family: var(--sans);
+      font-size: 0.6rem;
+      letter-spacing: 0.08em;
+      color: rgba(250, 248, 244, 0.3);
+      margin-top: 24px;
+    }
+
+    /* FOMO bar */
+    .fomo-block {
+      max-width: 480px;
+      margin: 0 auto 48px;
+    }
+
+    .fomo-bar-wrap {
+      height: 3px;
+      background: rgba(250, 248, 244, 0.12);
+      border-radius: 2px;
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+
+    .fomo-bar-fill {
+      height: 100%;
+      background: var(--gold);
+      border-radius: 2px;
+      transition: width 1.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .fomo-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .fomo-claimed {
+      font-family: var(--sans);
+      font-size: 0.7rem;
+      color: var(--gold-light);
+      letter-spacing: 0.04em;
+    }
+
+    .fomo-claimed strong { font-weight: 600; }
+
+    .fomo-total {
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      color: rgba(250, 248, 244, 0.38);
+    }
+
+    .fomo-total strong { font-weight: 500; }
+
+    /* ── ENVÍOS ── */
+    #envios {
+      background-color: var(--cream-dark);
+      padding: 80px 40px;
+    }
+
+    .envios-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .envios-item {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .envios-icon {
+      font-family: var(--serif);
+      font-size: 1.6rem;
+      color: var(--gold);
+      line-height: 1;
+      min-width: 28px;
+    }
+
+    .envios-item-title {
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--bronze);
+      margin-bottom: 6px;
+    }
+
+    .envios-item-text {
+      font-family: var(--sans);
+      font-size: 0.74rem;
+      font-weight: 300;
+      line-height: 1.75;
+      color: var(--bronze-mid);
+    }
+
+    /* ── MAYORISTAS ── */
+    #mayoristas {
+      background-color: var(--charcoal);
+      padding: 80px 40px;
+    }
+
+    .mayoristas-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+
+    #mayoristas .section-label { color: var(--gold); }
+    #mayoristas .section-title { color: var(--white-warm); }
+
+    .mayoristas-text {
+      font-family: var(--sans);
+      font-size: 0.78rem;
+      font-weight: 300;
+      line-height: 1.9;
+      color: rgba(250, 248, 244, 0.55);
+    }
+
+    .mayoristas-list {
+      list-style: none;
+      margin: 28px 0;
+    }
+
+    .mayoristas-list li {
+      font-family: var(--sans);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(250, 248, 244, 0.6);
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(250, 248, 244, 0.08);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .mayoristas-list li::before {
+      content: "✦";
+      color: var(--gold);
+      font-size: 0.5rem;
+    }
+
+    .btn-mayorista {
+      display: inline-block;
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      background: transparent;
+      border: 1px solid rgba(212, 185, 106, 0.45);
+      padding: 14px 32px;
+      cursor: pointer;
+      text-decoration: none;
+      border-radius: var(--radius);
+      transition: all 0.25s ease;
+    }
+
+    .btn-mayorista:hover {
+      background: rgba(212, 185, 106, 0.1);
+      border-color: var(--gold);
+      letter-spacing: 0.24em;
+    }
+
+    .mayoristas-badge-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .mayorista-badge {
+      background: rgba(250, 248, 244, 0.04);
+      border: 1px solid rgba(250, 248, 244, 0.1);
+      padding: 24px 28px;
+    }
+
+    .mayorista-badge-title {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: var(--gold-light);
+      margin-bottom: 6px;
+    }
+
+    .mayorista-badge-desc {
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      font-weight: 300;
+      color: rgba(250, 248, 244, 0.4);
+      letter-spacing: 0.06em;
+    }
+
+    .btn-cta {
+      display: inline-block;
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--dark-bg);
+      background: var(--gold-light);
+      border: none;
+      padding: 20px 56px;
+      cursor: pointer;
+      text-decoration: none;
+      border-radius: var(--radius);
+      transition: all 0.25s ease;
+      box-shadow: 0 0 0 0 rgba(212, 185, 106, 0.3);
+    }
+
+    .btn-cta:hover {
+      background: var(--gold);
+      box-shadow: 0 0 32px rgba(212, 185, 106, 0.2);
+      letter-spacing: 0.26em;
+    }
+
+    /* ──────────────────────────────────────────────
+       FOOTER
+    ────────────────────────────────────────────── */
+    footer {
+      background: var(--dark-bg);
+      border-top: 1px solid rgba(184, 151, 58, 0.2);
+      padding: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-logo {
+      font-family: var(--serif);
+      font-size: 1.4rem;
+      font-weight: 300;
+      letter-spacing: 0.24em;
+      color: var(--gold-light);
+    }
+
+    .footer-text {
+      font-family: var(--sans);
+      font-size: 0.6rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(250, 248, 244, 0.28);
+    }
+
+    /* ──────────────────────────────────────────────
+       RESPONSIVE
+    ────────────────────────────────────────────── */
+    @media (max-width: 900px) {
+
+      nav { padding: 14px 24px; }
+
+      section { padding: 70px 24px; }
+
+      #envios { padding: 70px 24px; }
+      #mayoristas { padding: 70px 24px; }
+
+      .hero-content { padding: 0 24px 60px; }
+
+      .secreto-grid,
+      .formula-grid,
+      .cordoba-content,
+      .mayoristas-inner { grid-template-columns: 1fr; gap: 0; }
+
+      .mayoristas-inner { gap: 40px; }
+
+      .formula-img { min-height: 340px; }
+      .formula-img img { height: 340px; }
+      .formula-content { padding: 56px 32px; }
+
+      .cordoba-content { padding: 70px 24px; gap: 40px; }
+      .cordoba-detail { text-align: left; }
+      .cordoba-quote, .cordoba-attr { text-align: left; }
+
+      .beneficios-grid { grid-template-columns: 1fr 1fr; }
+
+      .envios-grid { grid-template-columns: 1fr; gap: 32px; }
+
+      .secreto-stats-grid { grid-template-columns: 1fr; }
+
+      .price-block { flex-direction: column; align-items: center; gap: 12px; }
+    }
+
+    @media (max-width: 560px) {
+      .beneficios-grid { grid-template-columns: 1fr; }
+
+      .hero-title { letter-spacing: 0.12em; }
+
+      footer { flex-direction: column; text-align: center; }
+
+      .btn-cta { padding: 18px 36px; }
+    }
+
+    /* ──────────────────────────────────────────────
+       SCROLL ANIMATION (simple fade-in)
+    ────────────────────────────────────────────── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.75s ease, transform 0.75s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       NAV
+  ═══════════════════════════════════════════ -->
+  <nav>
+    <a class="nav-logo" href="#hero">VERA</a>
+    <span class="nav-tagline">Cuidado Ancestral · Argentina</span>
+  </nav>
+
+
+  <!-- ═══════════════════════════════════════════
+       HERO
+       → Reemplazar 'img_hero.jpg' con la imagen
+         de la lata envuelta en lino
+  ═══════════════════════════════════════════ -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <span class="hero-brand-label">Lanzamiento Piloto · Córdoba, Argentina</span>
+
+      <h1 class="hero-title">VERA</h1>
+      <p class="hero-subtitle">Cuidado Ancestral &nbsp;|&nbsp; Bálsamo Multiuso 120g</p>
+
+      <p class="hero-body">
+        Descubre la pureza<br>de la hidratación profunda.
+      </p>
+      <p class="hero-body-small">
+        Sin químicos. Solo dos ingredientes.<br>
+        Un bálsamo multipropósito hiperconcentrado, diseñado para nutrir rostro y cuerpo al instante.
+      </p>
+
+      <a href="#cta" class="btn-primary">Quiero ser parte de la prueba piloto</a>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       PRODUCTO — split image/specs
+       → img_producto.png (lata de frente)
+  ═══════════════════════════════════════════ -->
+  <section id="producto">
+    <div class="producto-grid">
+
+      <div class="producto-img-wrap">
+        <img src="img_producto.png" alt="VERA Crema Esencial — lata de aluminio 120g" loading="eager">
+      </div>
+
+      <div class="producto-content fade-in">
+        <span class="section-label">El Producto</span>
+        <h2 class="section-title">Bálsamo Esencial<br>Multiuso · 120g</h2>
+        <p class="producto-detail">
+          Un bálsamo anhidro hiperconcentrado para rostro y cuerpo.
+          Sin agua, sin conservantes, sin rellenos.<br>
+          Solo lo que tu piel necesita.
+        </p>
+
+        <div class="producto-specs">
+          <div class="spec-item">
+            <span class="spec-label">Formato</span>
+            <span class="spec-value">Lata aluminio</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">Contenido</span>
+            <span class="spec-value">120 gramos</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">Ingredientes</span>
+            <span class="spec-value">Solo 2</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">Origen</span>
+            <span class="spec-value">Córdoba, ARG</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       SECCIÓN 1 — EL SECRETO BIOCOMPATIBLE
+  ═══════════════════════════════════════════ -->
+  <section id="secreto">
+    <div class="section-inner">
+      <div class="secreto-grid">
+
+        <div class="fade-in">
+          <span class="section-label">01 — El Secreto</span>
+          <h2 class="section-title">Tu piel sabe<br>la verdad.</h2>
+          <div class="divider"></div>
+          <p class="section-text">
+            La mayoría de las cremas comerciales están llenas de derivados del petróleo, agua y siliconas.
+            VERA es diferente. Nuestro ingrediente estrella es el <strong style="font-weight:500; color:var(--bronze);">Tallow</strong> — Sebo Bovino Purificado de máxima pureza.
+          </p>
+
+          <div class="highlight-box fade-in">
+            <p>
+              "Es un bálsamo ancestral que nuestras células reconocen. Su composición lipídica
+              es biológicamente casi idéntica a la del sebo humano — por eso, la piel lo absorbe en segundos."
+            </p>
+          </div>
+        </div>
+
+        <div class="fade-in">
+          <span class="section-label" style="margin-bottom:28px;">¿Por qué Tallow?</span>
+          <p class="section-text" style="margin-bottom: 32px;">
+            La <strong style="font-weight:500; color:var(--bronze);">Biocompatibilidad</strong> es la clave.
+            Tus células cutáneas reconocen los lípidos del Tallow como propios — no como una sustancia extraña
+            que hay que procesar. Sin efecto graso. Pura regeneración celular desde adentro.
+          </p>
+
+          <div class="secreto-stats-grid">
+            <div class="secreto-stat fade-in">
+              <span class="secreto-stat-number">2</span>
+              <span class="secreto-stat-label">Ingredientes totales</span>
+            </div>
+            <div class="secreto-stat fade-in">
+              <span class="secreto-stat-number">0</span>
+              <span class="secreto-stat-label">Agua, conservantes o rellenos</span>
+            </div>
+            <div class="secreto-stat fade-in">
+              <span class="secreto-stat-number">∞</span>
+              <span class="secreto-stat-label">Usos: rostro, cuerpo, labios</span>
+            </div>
+            <div class="secreto-stat fade-in">
+              <span class="secreto-stat-number">120g</span>
+              <span class="secreto-stat-label">Nutrición pura y concentrada</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       SECCIÓN 2 — LA FÓRMULA
+       → Reemplazar 'img_formula.jpg' con la imagen
+         del eucalipto con textura de crema
+  ═══════════════════════════════════════════ -->
+  <section id="formula">
+    <div class="formula-grid">
+
+      <div class="formula-img">
+        <img src="img_formula.png" alt="Textura del bálsamo VERA con botanicals naturales" loading="lazy">
+      </div>
+
+      <div class="formula-content fade-in">
+        <span class="section-label">02 — La Fórmula</span>
+        <h2 class="section-title">Pureza<br>Transparente.</h2>
+        <div class="divider"></div>
+
+        <ul class="ingredient-list">
+          <li>
+            <span class="ingredient-number">I</span>
+            <div>
+              <p class="ingredient-name">Tallow Bovino Purificado</p>
+              <p class="ingredient-desc">Naturalmente rico en colágeno y vitaminas A, D, E y K.<br>Biocompatible con la piel humana.</p>
+            </div>
+          </li>
+          <li>
+            <span class="ingredient-number">II</span>
+            <div>
+              <p class="ingredient-name">Aceites Esenciales Aromáticos</p>
+              <p class="ingredient-desc">100% naturales. Bergamota, Geranio y Lavanda.<br>Sin fragancias sintéticas ni ftalatos.</p>
+            </div>
+          </li>
+        </ul>
+
+        <p class="formula-close">
+          Eso es todo. Sin conservantes. Sin agua añadida.<br>
+          120 gramos de nutrición pura y cruda.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       SECCIÓN 3 — BENEFICIOS
+  ═══════════════════════════════════════════ -->
+  <section id="beneficios">
+    <div class="section-inner">
+      <div class="beneficios-header fade-in">
+        <span class="section-label">03 — Beneficios</span>
+        <h2 class="section-title" style="text-align:center; max-width:500px; margin:0 auto;">
+          Una lata.<br>Infinitos usos.
+        </h2>
+      </div>
+
+      <div class="beneficios-grid">
+        <div class="beneficio-card fade-in">
+          <span class="beneficio-icon">✦</span>
+          <p class="beneficio-title">Hidratación<br>Profunda e Instantánea</p>
+        </div>
+        <div class="beneficio-card fade-in">
+          <span class="beneficio-icon">✦</span>
+          <p class="beneficio-title">Nutrición Celular<br>Regenerativa</p>
+        </div>
+        <div class="beneficio-card fade-in">
+          <span class="beneficio-icon">✦</span>
+          <p class="beneficio-title">Textura Ligera<br>de Rápida Absorción</p>
+        </div>
+        <div class="beneficio-card fade-in">
+          <span class="beneficio-icon">✦</span>
+          <p class="beneficio-title">Apto para las Pieles<br>más Sensibles</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       SECCIÓN 4 — HECHO EN CÓRDOBA
+       → Reemplazar 'img_cordoba.jpg' con la imagen
+         del taller boticario cálido desenfocado
+  ═══════════════════════════════════════════ -->
+  <section id="cordoba">
+    <div class="cordoba-bg"></div>
+    <div class="cordoba-overlay"></div>
+
+    <div class="cordoba-content">
+      <div class="cordoba-text fade-in">
+        <span class="section-label">04 — Origen</span>
+        <h2 class="section-title">Hecho a mano<br>en Córdoba.</h2>
+        <div class="divider" style="background: rgba(212,185,106,0.5);"></div>
+        <p class="cordoba-body">
+          Cada lata de VERA es purificada, formulada y envasada a mano en Córdoba, Argentina.
+          Un producto de boticario local, hecho con paciencia, lotes pequeños y respeto
+          por los procesos naturales.
+        </p>
+      </div>
+
+      <div class="cordoba-detail fade-in">
+        <p class="cordoba-quote">
+          "Lotes pequeños.<br>Ingredientes honestos.<br>Sin atajos."
+        </p>
+        <span class="cordoba-attr">— VERA, Córdoba, Argentina</span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       SECCIÓN 5 — ÚNETE / PRECIO / CTA
+  ═══════════════════════════════════════════ -->
+  <section id="cta">
+    <div class="section-inner">
+
+      <span class="section-label">05 — Únete</span>
+      <h2 class="section-title">La experiencia<br>empieza aquí.</h2>
+
+      <p class="cta-body">
+        Estamos en nuestra etapa de lanzamiento piloto, exclusiva para nuestro círculo de confianza.
+        Queremos que pruebes la biocompatibilidad del Tallow y nos compartas tu feedback honesto.
+      </p>
+
+      <!-- FOMO counter -->
+      <div class="fomo-block fade-in">
+        <div class="fomo-bar-wrap">
+          <div class="fomo-bar-fill" style="width: 37.7%"></div>
+        </div>
+        <div class="fomo-row">
+          <span class="fomo-claimed"><strong>377</strong> latas ya encargadas</span>
+          <span class="fomo-total">de las primeras <strong>1.000</strong></span>
+        </div>
+      </div>
+
+      <div class="price-block fade-in">
+        <div>
+          <span class="price-label">Precio de lista</span>
+          <span class="price-original">$15.000</span>
+        </div>
+
+        <div class="price-new-wrap">
+          <span class="price-new-label">Precio de Lanzamiento</span>
+          <span class="price-new">$10.000</span>
+        </div>
+      </div>
+
+      <a href="https://wa.me/TUNUMERO?text=Hola!%20Vi%20la%20p%C3%A1gina%20de%20VERA%20y%20quiero%20encargar%20mi%20lata." class="btn-cta fade-in" target="_blank" rel="noopener">
+        Encargar mi lata por $10.000
+      </a>
+
+      <span class="cta-disclaimer">
+        Precio de lanzamiento por tiempo limitado
+      </span>
+      <span class="cta-disclaimer" style="margin-top:10px;">
+        También podés escribirnos a &nbsp;<a href="mailto:somosvera.cordoba@gmail.com" style="color:rgba(212,185,106,0.55); text-decoration:none;">somosvera.cordoba@gmail.com</a>
+      </span>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       SECCIÓN ENVÍOS
+  ═══════════════════════════════════════════ -->
+  <section id="envios">
+    <div class="section-inner">
+      <div style="text-align:center; margin-bottom:52px;" class="fade-in">
+        <span class="section-label" style="display:block; text-align:center;">Entrega</span>
+        <h2 class="section-title" style="text-align:center; max-width:440px; margin:0 auto;">
+          Te lo llevamos<br>a donde estés.
+        </h2>
+      </div>
+
+      <div class="envios-grid fade-in">
+        <div class="envios-item">
+          <span class="envios-icon">◎</span>
+          <div>
+            <p class="envios-item-title">Córdoba Capital y Gran Córdoba</p>
+            <p class="envios-item-text">
+              Hacemos entregas en toda la ciudad y el Gran Córdoba.
+              Coordinamos el envío por WhatsApp una vez confirmado tu pedido.
+            </p>
+          </div>
+        </div>
+        <div class="envios-item">
+          <span class="envios-icon">◎</span>
+          <div>
+            <p class="envios-item-title">Interior del país</p>
+            <p class="envios-item-text">
+              Enviamos a todo el país vía correo o transporte.
+              Consultanos al momento de hacer tu pedido para coordinar la mejor opción.
+            </p>
+          </div>
+        </div>
+        <div class="envios-item">
+          <span class="envios-icon">◎</span>
+          <div>
+            <p class="envios-item-title">Retiro personal</p>
+            <p class="envios-item-text">
+              También podés retirar tu lata de forma personal en nuestra zona
+              norte de Córdoba. Coordinamos día y horario por WhatsApp.
+            </p>
+          </div>
+        </div>
+        <div class="envios-item">
+          <span class="envios-icon">◎</span>
+          <div>
+            <p class="envios-item-title">¿Dudas sobre tu zona?</p>
+            <p class="envios-item-text">
+              Escribinos y te avisamos la forma más rápida de hacértelo llegar.
+              Respondemos el mismo día.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       SECCIÓN MAYORISTAS
+  ═══════════════════════════════════════════ -->
+  <section id="mayoristas">
+    <div class="mayoristas-inner">
+
+      <div class="fade-in">
+        <span class="section-label">Para Locales y Revendedores</span>
+        <h2 class="section-title">Pedidos<br>al por mayor.</h2>
+        <div class="divider"></div>
+        <p class="mayoristas-text">
+          Si tenés un local, dietética, barbería, spa o cualquier espacio de bienestar y querés
+          ofrecer VERA a tus clientes, trabajamos con pedidos mayoristas con precios especiales.
+        </p>
+        <ul class="mayoristas-list">
+          <li>Barberías y peluquerías premium</li>
+          <li>Dietéticas y tiendas naturistas</li>
+          <li>Spas, centros estéticos y de bienestar</li>
+          <li>Mercados orgánicos y tiendas de diseño</li>
+          <li>Revendedores independientes</li>
+        </ul>
+        <a href="https://wa.me/TUNUMERO?text=Hola!%20Vi%20la%20p%C3%A1gina%20de%20VERA%20y%20me%20interesa%20hacer%20un%20pedido%20mayorista." class="btn-mayorista" target="_blank" rel="noopener">
+          Consultar pedido mayorista
+        </a>
+      </div>
+
+      <div class="mayoristas-badge-list fade-in">
+        <div class="mayorista-badge">
+          <p class="mayorista-badge-title">Producto de nicho</p>
+          <p class="mayorista-badge-desc">Posicionamiento premium — se vende solo.</p>
+        </div>
+        <div class="mayorista-badge">
+          <p class="mayorista-badge-title">Lotes pequeños</p>
+          <p class="mayorista-badge-desc">Producción artesanal. Frescura garantizada.</p>
+        </div>
+        <div class="mayorista-badge">
+          <p class="mayorista-badge-title">Precios especiales</p>
+          <p class="mayorista-badge-desc">Margen real para el revendedor.</p>
+        </div>
+        <div class="mayorista-badge">
+          <p class="mayorista-badge-title">Soporte directo</p>
+          <p class="mayorista-badge-desc">Trato personalizado. Sin intermediarios.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer>
+    <span class="footer-logo">VERA</span>
+    <span class="footer-text">Cosmética Ancestral &nbsp;·&nbsp; Hecho en Argentina</span>
+    <a href="mailto:somosvera.cordoba@gmail.com" class="footer-text" style="text-decoration:none; opacity:0.7; transition: opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">somosvera.cordoba@gmail.com</a>
+    <span class="footer-text">© 2026 VERA</span>
+  </footer>
+
+
+  <!-- ═══════════════════════════════════════════
+       SCRIPTS
+  ═══════════════════════════════════════════ -->
+  <script>
+    // Fade-in on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          // Trigger FOMO bar animation when it enters viewport
+          const bar = entry.target.querySelector('.fomo-bar-fill');
+          if (bar) {
+            setTimeout(() => { bar.style.width = bar.style.width; }, 100);
+          }
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Nav shrink on scroll
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      nav.style.padding = window.scrollY > 60 ? '10px 40px' : '18px 40px';
+    });
+  </script>
+
+</body>
+</html>
