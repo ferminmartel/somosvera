@@ -787,6 +787,98 @@
 
     .fomo-total strong { font-weight: 500; }
 
+    /* ── MODO DE USO ── */
+    #uso {
+      background-color: var(--white-warm);
+    }
+
+    .uso-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .uso-sticky {
+      position: sticky;
+      top: 100px;
+    }
+
+    .uso-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .uso-step {
+      display: flex;
+      gap: 24px;
+      padding: 28px 0;
+      border-bottom: 1px solid rgba(74, 65, 55, 0.1);
+      align-items: flex-start;
+    }
+
+    .uso-step:first-child { border-top: 1px solid rgba(74, 65, 55, 0.1); }
+
+    .uso-step-num {
+      font-family: var(--serif);
+      font-size: 1.8rem;
+      font-weight: 300;
+      color: var(--gold);
+      line-height: 1;
+      min-width: 32px;
+      padding-top: 2px;
+    }
+
+    .uso-step-title {
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--bronze);
+      margin-bottom: 6px;
+    }
+
+    .uso-step-text {
+      font-family: var(--sans);
+      font-size: 0.76rem;
+      font-weight: 300;
+      line-height: 1.85;
+      color: var(--bronze-mid);
+    }
+
+    .uso-tip {
+      margin-top: 36px;
+      padding: 28px 32px;
+      background: var(--cream-dark);
+      border-left: 2px solid var(--gold);
+    }
+
+    .uso-tip-label {
+      font-family: var(--sans);
+      font-size: 0.55rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .uso-tip-text {
+      font-family: var(--serif);
+      font-size: 0.95rem;
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.75;
+      color: var(--bronze);
+    }
+
+    @media (max-width: 900px) {
+      .uso-grid { grid-template-columns: 1fr; gap: 40px; }
+      .uso-sticky { position: static; }
+    }
+
     /* ── ENVÍOS ── */
     #envios {
       background-color: var(--cream-dark);
@@ -1086,7 +1178,7 @@
         Un bálsamo multipropósito hiperconcentrado, diseñado para nutrir rostro y cuerpo al instante.
       </p>
 
-      <a href="#cta" class="btn-primary">Quiero ser parte de la prueba piloto</a>
+      <a href="#uso" class="btn-primary">Quiero saber más</a>
     </div>
   </section>
 
@@ -1271,6 +1363,81 @@
 
 
   <!-- ═══════════════════════════════════════════
+       MODO DE USO
+  ═══════════════════════════════════════════ -->
+  <section id="uso">
+    <div class="section-inner">
+      <div class="uso-grid">
+
+        <div class="uso-sticky fade-in">
+          <span class="section-label">Modo de Uso</span>
+          <h2 class="section-title">Una pequeña<br>cantidad<br>rinde mucho.</h2>
+          <div class="divider"></div>
+          <p class="section-text">
+            VERA es una fórmula rica, nutritiva y concentrada.
+            Seguí estos pasos para sacarle el máximo provecho.
+          </p>
+
+          <div class="uso-tip">
+            <span class="uso-tip-label">Consejo</span>
+            <p class="uso-tip-text">
+              Aplicala después del baño o sobre la piel apenas húmeda — se desliza mejor y deja una sensación más cómoda.
+            </p>
+          </div>
+        </div>
+
+        <div class="uso-steps fade-in">
+          <div class="uso-step">
+            <span class="uso-step-num">I</span>
+            <div>
+              <p class="uso-step-title">Tomá una pequeña cantidad</p>
+              <p class="uso-step-text">
+                Usá una porción similar a una perlita. Con VERA, menos es más —
+                la fórmula es hiperconcentrada y una cantidad mínima es suficiente para nutrir todo el área.
+              </p>
+            </div>
+          </div>
+
+          <div class="uso-step">
+            <span class="uso-step-num">II</span>
+            <div>
+              <p class="uso-step-title">Calentá entre las manos</p>
+              <p class="uso-step-text">
+                Frotala suavemente entre ambas manos durante unos segundos.
+                Con el calor natural de la piel, la crema se vuelve más flexible y fácil de distribuir.
+              </p>
+            </div>
+          </div>
+
+          <div class="uso-step">
+            <span class="uso-step-num">III</span>
+            <div>
+              <p class="uso-step-title">Aplicá con movimientos suaves</p>
+              <p class="uso-step-text">
+                Distribuí sobre la piel limpia con movimientos circulares hasta que se absorba.
+                Funciona tanto en rostro como en cuerpo — codos, labios, cutículas, lo que necesites.
+              </p>
+            </div>
+          </div>
+
+          <div class="uso-step">
+            <span class="uso-step-num">IV</span>
+            <div>
+              <p class="uso-step-title">¿Quedó muy aceitosa?</p>
+              <p class="uso-step-text">
+                Probablemente usaste más de lo necesario — es el error más común la primera vez.
+                La próxima aplicá menos y agregá solo si hace falta. Tu piel te va a ir indicando la cantidad exacta.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
        SECCIÓN 4 — HECHO EN CÓRDOBA
        → Reemplazar 'img_cordoba.jpg' con la imagen
          del taller boticario cálido desenfocado
@@ -1338,7 +1505,7 @@
         </div>
       </div>
 
-      <a href="https://wa.me/TUNUMERO?text=Hola!%20Vi%20la%20p%C3%A1gina%20de%20VERA%20y%20quiero%20encargar%20mi%20lata." class="btn-cta fade-in" target="_blank" rel="noopener">
+      <a href="https://wa.me/5493515585046?text=Hola!%20Vi%20la%20p%C3%A1gina%20de%20VERA%20y%20quiero%20encargar%20mi%20lata." class="btn-cta fade-in" target="_blank" rel="noopener">
         Encargar mi lata por $10.000
       </a>
 
@@ -1346,7 +1513,10 @@
         Precio de lanzamiento por tiempo limitado
       </span>
       <span class="cta-disclaimer" style="margin-top:10px;">
-        También podés escribirnos a &nbsp;<a href="mailto:somosvera.cordoba@gmail.com" style="color:rgba(212,185,106,0.55); text-decoration:none;">somosvera.cordoba@gmail.com</a>
+        O escribinos directo &nbsp;
+        <a href="https://wa.me/5493515585046" style="color:rgba(212,185,106,0.7); text-decoration:none;" target="_blank" rel="noopener">+54 9 351 558 5046</a>
+        &nbsp;·&nbsp;
+        <a href="mailto:somosvera.cordoba@gmail.com" style="color:rgba(212,185,106,0.55); text-decoration:none;">somosvera.cordoba@gmail.com</a>
       </span>
 
     </div>
@@ -1432,7 +1602,7 @@
           <li>Mercados orgánicos y tiendas de diseño</li>
           <li>Revendedores independientes</li>
         </ul>
-        <a href="https://wa.me/TUNUMERO?text=Hola!%20Vi%20la%20p%C3%A1gina%20de%20VERA%20y%20me%20interesa%20hacer%20un%20pedido%20mayorista." class="btn-mayorista" target="_blank" rel="noopener">
+        <a href="https://wa.me/5493515585046?text=Hola!%20Vi%20la%20p%C3%A1gina%20de%20VERA%20y%20me%20interesa%20hacer%20un%20pedido%20mayorista." class="btn-mayorista" target="_blank" rel="noopener">
           Consultar pedido mayorista
         </a>
       </div>
@@ -1466,6 +1636,7 @@
   <footer>
     <span class="footer-logo">VERA</span>
     <span class="footer-text">Cosmética Ancestral &nbsp;·&nbsp; Hecho en Argentina</span>
+    <a href="https://wa.me/5493515585046" class="footer-text" style="text-decoration:none; opacity:0.7; transition: opacity 0.2s;" target="_blank" rel="noopener" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">+54 9 351 558 5046</a>
     <a href="mailto:somosvera.cordoba@gmail.com" class="footer-text" style="text-decoration:none; opacity:0.7; transition: opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">somosvera.cordoba@gmail.com</a>
     <span class="footer-text">© 2026 VERA</span>
   </footer>
