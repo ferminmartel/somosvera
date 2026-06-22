@@ -674,68 +674,6 @@
       margin: 0 auto 52px;
     }
 
-    .stock-badge {
-      display: inline-block;
-      font-family: var(--sans);
-      font-size: 0.6rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold-light);
-      border: 1px solid rgba(212, 185, 106, 0.4);
-      padding: 6px 18px;
-      margin-bottom: 48px;
-    }
-
-    .price-block {
-      display: flex;
-      align-items: baseline;
-      justify-content: center;
-      gap: 24px;
-      margin-bottom: 48px;
-    }
-
-    .price-original {
-      font-family: var(--serif);
-      font-size: 1.4rem;
-      font-weight: 300;
-      color: rgba(250, 248, 244, 0.28);
-      text-decoration: line-through;
-      text-decoration-color: rgba(250, 248, 244, 0.2);
-    }
-
-    .price-label {
-      font-family: var(--sans);
-      font-size: 0.55rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: rgba(250, 248, 244, 0.35);
-      display: block;
-      text-align: right;
-      margin-bottom: 3px;
-    }
-
-    .price-new-wrap {
-      text-align: center;
-    }
-
-    .price-new-label {
-      font-family: var(--sans);
-      font-size: 0.55rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold-light);
-      display: block;
-      margin-bottom: 4px;
-    }
-
-    .price-new {
-      font-family: var(--serif);
-      font-size: 3.2rem;
-      font-weight: 300;
-      color: var(--white-warm);
-      line-height: 1;
-    }
-
     .cta-disclaimer {
       display: block;
       font-family: var(--sans);
@@ -744,50 +682,6 @@
       color: rgba(250, 248, 244, 0.3);
       margin-top: 24px;
     }
-
-    /* FOMO bar */
-    .fomo-block {
-      max-width: 480px;
-      margin: 0 auto 48px;
-    }
-
-    .fomo-bar-wrap {
-      height: 3px;
-      background: rgba(250, 248, 244, 0.12);
-      border-radius: 2px;
-      margin-bottom: 12px;
-      overflow: hidden;
-    }
-
-    .fomo-bar-fill {
-      height: 100%;
-      background: var(--gold);
-      border-radius: 2px;
-      transition: width 1.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    }
-
-    .fomo-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .fomo-claimed {
-      font-family: var(--sans);
-      font-size: 0.7rem;
-      color: var(--gold-light);
-      letter-spacing: 0.04em;
-    }
-
-    .fomo-claimed strong { font-weight: 600; }
-
-    .fomo-total {
-      font-family: var(--sans);
-      font-size: 0.65rem;
-      color: rgba(250, 248, 244, 0.38);
-    }
-
-    .fomo-total strong { font-weight: 500; }
 
     /* ── MODO DE USO ── */
     #uso {
@@ -1154,6 +1048,7 @@
   <nav>
     <a class="nav-logo" href="#hero">VERA</a>
     <span class="nav-tagline">Cuidado Ancestral · Argentina</span>
+    <a href="https://www.instagram.com/somosvera.cordoba/" target="_blank" rel="noopener" style="font-family:var(--sans); font-size:0.62rem; letter-spacing:0.14em; color:var(--bronze-mid); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='var(--bronze)'" onmouseout="this.style.color='var(--bronze-mid)'">Instagram ↗</a>
   </nav>
 
 
@@ -1484,41 +1379,15 @@
         Dos ingredientes. Sin vueltas. Si llegaste hasta acá, ya sabés que esto es diferente.
       </p>
 
-      <!-- FOMO counter -->
-      <div class="fomo-block fade-in">
-        <div class="fomo-bar-wrap">
-          <div class="fomo-bar-fill" style="width: 37.7%"></div>
-        </div>
-        <div class="fomo-row">
-          <span class="fomo-claimed"><strong>377</strong> latas ya encargadas</span>
-          <span class="fomo-total">de las primeras <strong>1.000</strong></span>
-        </div>
-      </div>
-
-      <div class="price-block fade-in">
-        <div>
-          <span class="price-label">Precio de lista</span>
-          <span class="price-original">$15.000</span>
-        </div>
-
-        <div class="price-new-wrap">
-          <span class="price-new-label">Precio de Lanzamiento</span>
-          <span class="price-new">$10.000</span>
-        </div>
-      </div>
-
       <a href="https://wa.me/5493515585046?text=Hola!%20Vi%20la%20p%C3%A1gina%20de%20VERA%20y%20quiero%20encargar%20mi%20lata." class="btn-cta fade-in" target="_blank" rel="noopener">
-        Encargar mi lata por $10.000
+        Encargar mi lata
       </a>
 
-      <span class="cta-disclaimer">
-        Precio de lanzamiento por tiempo limitado
-      </span>
-      <span class="cta-disclaimer" style="margin-top:10px;">
+      <span class="cta-disclaimer" style="margin-top:24px;">
         O escribinos directo &nbsp;
         <a href="https://wa.me/5493515585046" style="color:rgba(212,185,106,0.7); text-decoration:none;" target="_blank" rel="noopener">+54 9 351 558 5046</a>
         &nbsp;·&nbsp;
-        <a href="mailto:somosvera.cordoba@gmail.com" style="color:rgba(212,185,106,0.55); text-decoration:none;">somosvera.cordoba@gmail.com</a>
+        <a href="https://www.instagram.com/somosvera.cordoba/" style="color:rgba(212,185,106,0.7); text-decoration:none;" target="_blank" rel="noopener">@somosvera.cordoba</a>
       </span>
 
     </div>
@@ -1639,7 +1508,7 @@
     <span class="footer-logo">VERA</span>
     <span class="footer-text">Cosmética Ancestral &nbsp;·&nbsp; Hecho en Argentina</span>
     <a href="https://wa.me/5493515585046" class="footer-text" style="text-decoration:none; opacity:0.7; transition: opacity 0.2s;" target="_blank" rel="noopener" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">+54 9 351 558 5046</a>
-    <a href="mailto:somosvera.cordoba@gmail.com" class="footer-text" style="text-decoration:none; opacity:0.7; transition: opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">somosvera.cordoba@gmail.com</a>
+    <a href="https://www.instagram.com/somosvera.cordoba/" class="footer-text" style="text-decoration:none; opacity:0.7; transition: opacity 0.2s;" target="_blank" rel="noopener" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">@somosvera.cordoba</a>
     <span class="footer-text">© 2026 VERA</span>
   </footer>
 
