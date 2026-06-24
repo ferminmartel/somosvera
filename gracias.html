@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¡Gracias por tu compra! — VERA</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8P85FS23PB"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-8P85FS23PB');</script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream: #F0EDE6; --cream-dark: #E4DFD6;
+      --charcoal: #2E2B27; --bronze: #4A4137; --bronze-mid: #7A6A55;
+      --gold: #B8973A; --gold-light: #D4B96A; --white-warm: #FAF8F4; --dark-bg: #262320;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'Montserrat', Arial, sans-serif;
+    }
+    body {
+      font-family: var(--sans);
+      background: var(--dark-bg);
+      color: var(--white-warm);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+    }
+    nav {
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid rgba(184,151,58,0.12);
+    }
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: 0.28em;
+      color: var(--gold-light);
+      text-decoration: none;
+    }
+    .main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 24px;
+    }
+    .card {
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+    }
+    .check-icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      border: 1px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 40px;
+      font-size: 1.6rem;
+      color: var(--gold);
+    }
+    .label-small {
+      font-family: var(--sans);
+      font-size: 0.55rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 20px;
+    }
+    h1 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 300;
+      color: var(--white-warm);
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+    .subtitle {
+      font-family: var(--sans);
+      font-size: 0.78rem;
+      font-weight: 300;
+      color: rgba(250,248,244,0.45);
+      line-height: 1.85;
+      max-width: 440px;
+      margin: 0 auto 52px;
+    }
+    .next-steps {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(184,151,58,0.18);
+      padding: 40px;
+      margin-bottom: 40px;
+      text-align: left;
+    }
+    .next-steps-title {
+      font-family: var(--sans);
+      font-size: 0.55rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 28px;
+    }
+    .step {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(184,151,58,0.08);
+    }
+    .step:last-child { border-bottom: none; padding-bottom: 0; }
+    .step-num {
+      width: 32px;
+      height: 32px;
+      background: var(--bronze);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--serif);
+      font-size: 0.9rem;
+      color: var(--white-warm);
+      flex-shrink: 0;
+    }
+    .step-text {
+      font-family: var(--sans);
+      font-size: 0.75rem;
+      font-weight: 300;
+      color: rgba(250,248,244,0.7);
+      line-height: 1.7;
+      padding-top: 6px;
+    }
+    .step-text strong { font-weight: 500; color: var(--white-warm); }
+    .mapa-box {
+      margin-top: 20px;
+      height: 200px;
+      overflow: hidden;
+      display: none;
+    }
+    .mapa-box iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      filter: grayscale(20%) contrast(0.85);
+    }
+    .btn-primary {
+      display: inline-block;
+      font-family: var(--sans);
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--dark-bg);
+      background: var(--gold-light);
+      padding: 18px 44px;
+      text-decoration: none;
+      transition: background 0.25s;
+      margin-bottom: 20px;
+    }
+    .btn-primary:hover { background: var(--gold); }
+    .link-home {
+      display: block;
+      font-family: var(--sans);
+      font-size: 0.62rem;
+      color: rgba(250,248,244,0.35);
+      text-decoration: none;
+      letter-spacing: 0.14em;
+      transition: color 0.2s;
+    }
+    .link-home:hover { color: rgba(250,248,244,0.65); }
+    footer {
+      padding: 24px 40px;
+      border-top: 1px solid rgba(184,151,58,0.1);
+      text-align: center;
+    }
+    .footer-text {
+      font-family: var(--sans);
+      font-size: 0.58rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(250,248,244,0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="/">VERA</a>
+  </nav>
+
+  <main class="main">
+    <div class="card" id="card-content">
+
+      <!-- Estado de carga mientras lee sessionStorage -->
+      <div id="loading" style="color:rgba(250,248,244,0.3); font-family:var(--sans); font-size:0.7rem; letter-spacing:0.1em;">
+        Cargando tu confirmación...
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <span class="footer-text">VERA · Cosmética Ancestral · Hecho en Argentina</span>
+  </footer>
+
+  <script>
+    // Lee parámetros que manda MercadoPago en la URL de retorno:
+    // ?collection_id=XXX&collection_status=approved&payment_id=XXX&status=approved&...
+    var params  = new URLSearchParams(window.location.search);
+    var status  = params.get('status') || params.get('collection_status') || 'approved';
+    var paymentId = params.get('payment_id') || params.get('collection_id') || '';
+
+    // La opción de envío la guardamos en sessionStorage antes de ir a MP
+    var shipping = params.get('external_reference') ||
+                   sessionStorage.getItem('vera_shipping') || 'envio';
+    sessionStorage.removeItem('vera_shipping');
+
+    var WA_NUMBER   = '5493515585046';
+    var WA_MSG_ENVIO = encodeURIComponent(
+      'Hola! Acabo de pagar por MercadoPago (ID: ' + paymentId + ') y quiero coordinar el envío de mi VERA.'
+    );
+    var WA_LINK = 'https://wa.me/' + WA_NUMBER + '?text=' + WA_MSG_ENVIO;
+
+    var card = document.getElementById('card-content');
+
+    // Si el pago no fue aprobado, mostramos pantalla alternativa
+    if (status === 'failure' || status === 'rejected') {
+      card.innerHTML = `
+        <div class="check-icon" style="border-color:rgba(250,248,244,0.2); color:rgba(250,248,244,0.3);">✕</div>
+        <span class="label-small" style="color:rgba(250,248,244,0.4);">Pago no completado</span>
+        <h1 style="font-size:clamp(1.6rem,4vw,2.6rem);">El pago no pudo procesarse.</h1>
+        <p class="subtitle">No te preocupes — no se realizó ningún cobro. Podés intentarlo de nuevo o escribirnos por WhatsApp.</p>
+        <a href="/#comprar" class="btn-primary" style="margin-bottom:16px;">Intentar de nuevo</a>
+        <a href="https://wa.me/${WA_NUMBER}" class="link-home" style="color:rgba(212,185,106,0.6);">Encargar por WhatsApp →</a>
+      `;
+      return;
+    }
+
+    if (status === 'pending' || status === 'in_process') {
+      card.innerHTML = `
+        <div class="check-icon" style="border-color:var(--gold-light); color:var(--gold-light);">⟳</div>
+        <span class="label-small">Pago en proceso</span>
+        <h1>Tu pago está siendo procesado.</h1>
+        <p class="subtitle">MercadoPago está verificando tu pago. Te llegará una confirmación por email cuando esté listo. Nosotros también te contactamos por WhatsApp.</p>
+        <a href="${WA_LINK}" class="btn-primary" target="_blank" rel="noopener">Avisarnos por WhatsApp</a>
+        <a href="/" class="link-home">← Volver al inicio</a>
+      `;
+      return;
+    }
+
+    if (shipping === 'retiro') {
+      card.innerHTML = `
+        <div class="check-icon">✦</div>
+        <span class="label-small">Pago confirmado</span>
+        <h1>¡Tu VERA ya está separada!</h1>
+        <p class="subtitle">Tu pago fue procesado. Podés pasar a retirar tu lata cuando quieras en el punto de retiro.</p>
+
+        <div class="next-steps">
+          <span class="next-steps-title">Cómo retirar tu lata</span>
+          <div class="step">
+            <div class="step-num">1</div>
+            <p class="step-text"><strong>Presentate en Budapets</strong><br>Av. Gauss 5308, Villa Belgrano, Córdoba. Podés ir el mismo día de la compra o en los próximos días.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <p class="step-text"><strong>Mostrá el comprobante de pago</strong><br>El resumen de MercadoPago te llega al mail. Con eso es suficiente.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <p class="step-text"><strong>¿Dudas?</strong><br>Escribinos por WhatsApp y te ayudamos al toque.</p>
+          </div>
+          <div class="mapa-box" id="mapa-retiro" style="display:block; margin-top:24px;">
+            <iframe
+              src="https://maps.google.com/maps?q=Av.+Gauss+5308,+Villa+Belgrano,+C%C3%B3rdoba,+Argentina&hl=es&output=embed&z=16"
+              loading="lazy"
+              allowfullscreen
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Budapets — Punto de retiro VERA">
+            </iframe>
+          </div>
+        </div>
+
+        <a href="https://wa.me/${WA_NUMBER}" class="btn-primary" target="_blank" rel="noopener">Escribirnos por WhatsApp</a>
+        <a href="/" class="link-home">← Volver al inicio</a>
+      `;
+    } else {
+      card.innerHTML = `
+        <div class="check-icon">✦</div>
+        <span class="label-small">Pago confirmado</span>
+        <h1>¡Gracias por tu compra!</h1>
+        <p class="subtitle">Tu pago fue procesado. En los próximos minutos te contactamos por WhatsApp para coordinar el envío.</p>
+
+        <div class="next-steps">
+          <span class="next-steps-title">Lo que pasa ahora</span>
+          <div class="step">
+            <div class="step-num">1</div>
+            <p class="step-text"><strong>Te contactamos nosotros</strong><br>En minutos te escribimos por WhatsApp al número con el que hiciste la compra para coordinar el envío por Uber Moto.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <p class="step-text"><strong>Confirmamos la dirección</strong><br>El costo del envío lo coordinamos juntos. Depende de la distancia dentro de Córdoba.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <p class="step-text"><strong>Tu lata sale el mismo día</strong><br>Si el pedido llega antes de las 17 hs, lo enviamos el mismo día.</p>
+          </div>
+        </div>
+
+        <a href="${WA_LINK}" class="btn-primary" target="_blank" rel="noopener">Coordinar por WhatsApp ahora</a>
+        <a href="/" class="link-home">← Volver al inicio</a>
+      `;
+    }
+  </script>
+
+</body>
+</html>
