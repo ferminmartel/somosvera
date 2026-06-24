@@ -1404,3 +1404,148 @@
     </div>
   </section>
 
+
+  <!-- ═══════════════════════════════════════════
+       SECCIÓN ENVÍOS
+  ═══════════════════════════════════════════ -->
+  <section id="envios">
+    <div class="section-inner">
+      <div style="text-align:center; margin-bottom:52px;" class="fade-in">
+        <span class="section-label" style="display:block; text-align:center;">Entrega</span>
+        <h2 class="section-title" style="text-align:center; max-width:440px; margin:0 auto;">
+          Te lo llevamos<br>a donde estés.
+        </h2>
+      </div>
+
+      <div class="envios-grid fade-in">
+        <div class="envios-item">
+          <span class="envios-icon">◎</span>
+          <div>
+            <p class="envios-item-title">Córdoba Capital y Gran Córdoba</p>
+            <p class="envios-item-text">
+              Hacemos entregas en toda la ciudad y el Gran Córdoba.
+              Coordinamos el envío por WhatsApp una vez confirmado tu pedido.
+            </p>
+          </div>
+        </div>
+        <div class="envios-item">
+          <span class="envios-icon">◎</span>
+          <div>
+            <p class="envios-item-title">Interior del país</p>
+            <p class="envios-item-text">
+              Enviamos a todo el país vía correo o transporte.
+              Consultanos al momento de hacer tu pedido para coordinar la mejor opción.
+            </p>
+          </div>
+        </div>
+        <div class="envios-item">
+          <span class="envios-icon">◎</span>
+          <div>
+            <p class="envios-item-title">Retiro personal</p>
+            <p class="envios-item-text">
+              También podés retirar tu lata en Av. Gauss 5308, Villa Belgrano (Budapets).
+              Coordinamos día y horario por WhatsApp.
+            </p>
+          </div>
+        </div>
+        <div class="envios-item">
+          <span class="envios-icon">◎</span>
+          <div>
+            <p class="envios-item-title">¿Dudas sobre tu zona?</p>
+            <p class="envios-item-text">
+              Escribinos y te avisamos la forma más rápida de hacértelo llegar.
+              Respondemos el mismo día.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       SECCIÓN MAYORISTAS
+  ═══════════════════════════════════════════ -->
+  <section id="mayoristas">
+    <div class="mayoristas-inner">
+
+      <div class="fade-in">
+        <span class="section-label">Para Locales y Revendedores</span>
+        <h2 class="section-title">Pedidos<br>al por mayor.</h2>
+        <div class="divider"></div>
+        <p class="mayoristas-text">
+          Si tenés un local, dietética, barbería, spa o cualquier espacio de bienestar y querés
+          ofrecer VERA a tus clientes, trabajamos con pedidos mayoristas con precios especiales.
+        </p>
+        <ul class="mayoristas-list">
+          <li>Barberías y peluquerías premium</li>
+          <li>Dietéticas y tiendas naturistas</li>
+          <li>Spas, centros estéticos y de bienestar</li>
+          <li>Mercados orgánicos y tiendas de diseño</li>
+          <li>Revendedores independientes</li>
+        </ul>
+        <a href="https://wa.me/5493515585046?text=Hola!%20Vi%20la%20p%C3%A1gina%20de%20VERA%20y%20me%20interesa%20hacer%20un%20pedido%20mayorista." class="btn-mayorista" target="_blank" rel="noopener">
+          Consultar pedido mayorista
+        </a>
+      </div>
+
+      <div class="mayoristas-badge-list fade-in">
+        <div class="mayorista-badge">
+          <p class="mayorista-badge-title">Producto de nicho</p>
+          <p class="mayorista-badge-desc">Posicionamiento premium — se vende solo.</p>
+        </div>
+        <div class="mayorista-badge">
+          <p class="mayorista-badge-title">Lotes pequeños</p>
+          <p class="mayorista-badge-desc">Producción artesanal. Frescura garantizada.</p>
+        </div>
+        <div class="mayorista-badge">
+          <p class="mayorista-badge-title">Precios especiales</p>
+          <p class="mayorista-badge-desc">Margen real para el revendedor.</p>
+        </div>
+        <div class="mayorista-badge">
+          <p class="mayorista-badge-title">Soporte directo</p>
+          <p class="mayorista-badge-desc">Trato personalizado. Sin intermediarios.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer>
+    <span class="footer-logo">VERA</span>
+    <span class="footer-text">Cosmética Ancestral &nbsp;·&nbsp; Hecho en Argentina</span>
+    <a href="https://wa.me/5493515585046" class="footer-text" style="text-decoration:none; opacity:0.7; transition: opacity 0.2s;" target="_blank" rel="noopener" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">+54 9 351 558 5046</a>
+    <a href="https://www.instagram.com/somosvera.cordoba/" class="footer-text" style="text-decoration:none; opacity:0.7; transition: opacity 0.2s;" target="_blank" rel="noopener" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">@somosvera.cordoba</a>
+    <span class="footer-text">© 2026 VERA</span>
+  </footer>
+
+
+  <!-- ═══════════════════════════════════════════
+       SCRIPTS
+  ═══════════════════════════════════════════ -->
+  <script>
+    // Fade-in on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Nav shrink on scroll
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      nav.style.padding = window.scrollY > 60 ? '10px 40px' : '18px 40px';
+    });
+  </script>
+
+</body>
+</html>
