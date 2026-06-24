@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — VERA Cosmética Ancestral | Cuidado natural de la piel</title>
+  <meta name="description" content="El blog de VERA: cosmética limpia, ingredientes honestos y el arte de cuidar la piel sin química. Escrito por formuladoras, naturópatas y barberos.">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8P85FS23PB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-8P85FS23PB');
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream: #F0EDE6; --cream-dark: #E4DFD6; --concrete-bg: #ECEAE4;
+      --charcoal: #2E2B27; --bronze: #4A4137; --bronze-mid: #7A6A55;
+      --gold: #B8973A; --gold-light: #D4B96A; --white-warm: #FAF8F4;
+      --dark-bg: #262320;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'Montserrat', Arial, sans-serif;
+      --max-w: 1100px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); background: var(--cream); color: var(--charcoal); -webkit-font-smoothing: antialiased; }
+    img { display: block; width: 100%; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 18px 40px; display: flex; justify-content: space-between; align-items: center;
+      background: rgba(240, 237, 230, 0.94); backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(74, 65, 55, 0.12);
+    }
+    .nav-logo { font-family: var(--serif); font-size: 1.6rem; font-weight: 600; letter-spacing: 0.28em; color: var(--bronze); text-decoration: none; }
+    .nav-links { display: flex; gap: 32px; align-items: center; }
+    .nav-link { font-family: var(--sans); font-size: 0.62rem; letter-spacing: 0.14em; color: var(--bronze-mid); text-decoration: none; transition: color 0.2s; }
+    .nav-link:hover, .nav-link.active { color: var(--bronze); }
+
+    /* HERO BLOG */
+    .blog-hero {
+      padding: 160px 40px 80px;
+      background: var(--dark-bg);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .blog-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(184,151,58,0.15) 0%, transparent 70%);
+    }
+    .blog-hero-label {
+      font-family: var(--sans); font-size: 0.6rem; letter-spacing: 0.32em;
+      text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 20px;
+    }
+    .blog-hero-title {
+      font-family: var(--serif); font-size: clamp(2.8rem, 6vw, 5rem);
+      font-weight: 300; letter-spacing: 0.1em; color: var(--white-warm);
+      margin-bottom: 20px; line-height: 1.1;
+    }
+    .blog-hero-sub {
+      font-family: var(--sans); font-size: 0.8rem; font-weight: 300;
+      color: rgba(250,248,244,0.55); max-width: 520px; margin: 0 auto; line-height: 1.9;
+    }
+
+    /* AUTORES strip */
+    .autores-strip {
+      background: var(--cream-dark);
+      border-bottom: 1px solid rgba(74,65,55,0.1);
+      padding: 28px 40px;
+    }
+    .autores-inner {
+      max-width: var(--max-w); margin: 0 auto;
+      display: flex; gap: 40px; align-items: center; flex-wrap: wrap;
+    }
+    .autores-label {
+      font-family: var(--sans); font-size: 0.55rem; letter-spacing: 0.24em;
+      text-transform: uppercase; color: var(--gold); white-space: nowrap;
+    }
+    .autores-list { display: flex; gap: 28px; flex-wrap: wrap; }
+    .autor-chip { display: flex; align-items: center; gap: 10px; }
+    .autor-avatar {
+      width: 36px; height: 36px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--serif); font-size: 0.85rem; font-weight: 600; color: var(--white-warm);
+      flex-shrink: 0;
+    }
+    .av-v { background: #7A6A55; }
+    .av-l { background: #5C7A6A; }
+    .av-m { background: #4A4137; }
+    .autor-chip-name { font-family: var(--sans); font-size: 0.65rem; color: var(--bronze-mid); }
+    .autor-chip-role { font-family: var(--sans); font-size: 0.55rem; color: rgba(122,106,85,0.6); display: block; }
+
+    /* POSTS GRID */
+    .blog-main {
+      max-width: var(--max-w); margin: 0 auto;
+      padding: 80px 40px;
+    }
+    .blog-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px;
+      background: rgba(74,65,55,0.08);
+    }
+    /* Featured first post */
+    .post-card { background: var(--white-warm); text-decoration: none; display: flex; flex-direction: column; transition: background 0.2s; }
+    .post-card:hover { background: var(--cream); }
+    .post-card.featured { grid-column: 1 / -1; flex-direction: row; }
+    .post-img {
+      aspect-ratio: 16/9; overflow: hidden; background: var(--cream-dark);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--serif); font-size: 3rem; color: var(--gold);
+      flex-shrink: 0;
+    }
+    .post-card.featured .post-img { width: 50%; aspect-ratio: auto; min-height: 340px; }
+    .post-body { padding: 40px; display: flex; flex-direction: column; justify-content: center; flex: 1; }
+    .post-card:not(.featured) .post-body { padding: 32px; }
+    .post-category {
+      font-family: var(--sans); font-size: 0.52rem; letter-spacing: 0.26em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 14px; display: block;
+    }
+    .post-title {
+      font-family: var(--serif); font-size: clamp(1.3rem, 2.5vw, 2rem);
+      font-weight: 300; color: var(--bronze); line-height: 1.25; margin-bottom: 16px;
+    }
+    .post-card:not(.featured) .post-title { font-size: 1.35rem; }
+    .post-excerpt {
+      font-family: var(--sans); font-size: 0.75rem; font-weight: 300;
+      line-height: 1.85; color: var(--bronze-mid); margin-bottom: 28px; flex: 1;
+    }
+    .post-meta { display: flex; align-items: center; gap: 12px; }
+    .post-meta-avatar {
+      width: 30px; height: 30px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--serif); font-size: 0.7rem; color: var(--white-warm);
+    }
+    .post-meta-info { display: flex; flex-direction: column; }
+    .post-meta-name { font-family: var(--sans); font-size: 0.6rem; color: var(--bronze); font-weight: 500; }
+    .post-meta-date { font-family: var(--sans); font-size: 0.55rem; color: rgba(122,106,85,0.6); }
+    .post-read-more {
+      display: inline-block; margin-top: 24px;
+      font-family: var(--sans); font-size: 0.6rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--gold); text-decoration: none;
+      border-bottom: 1px solid rgba(184,151,58,0.4); padding-bottom: 2px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .post-card:hover .post-read-more { border-color: var(--gold); color: var(--bronze); }
+
+    /* Post image backgrounds using CSS gradients as placeholders */
+    .img-bg-1 { background: linear-gradient(135deg, #D4C4A8 0%, #C0B090 100%); }
+    .img-bg-2 { background: linear-gradient(135deg, #E8E4DC 0%, #D0C8BC 100%); }
+    .img-bg-3 { background: linear-gradient(135deg, #3A3530 0%, #4A4137 100%); color: var(--gold-light) !important; }
+    .img-bg-4 { background: linear-gradient(135deg, #BFB8AC 0%, #A8A098 100%); }
+
+    /* NEWSLETTER strip */
+    .newsletter {
+      background: var(--charcoal); padding: 80px 40px; text-align: center;
+    }
+    .newsletter-title {
+      font-family: var(--serif); font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 300; color: var(--white-warm); margin-bottom: 16px;
+    }
+    .newsletter-sub {
+      font-family: var(--sans); font-size: 0.75rem; font-weight: 300;
+      color: rgba(250,248,244,0.5); max-width: 440px; margin: 0 auto 36px; line-height: 1.8;
+    }
+    .newsletter-cta {
+      display: inline-block; font-family: var(--sans); font-size: 0.68rem;
+      font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--dark-bg); background: var(--gold-light);
+      padding: 16px 40px; text-decoration: none; transition: background 0.25s;
+    }
+    .newsletter-cta:hover { background: var(--gold); }
+
+    /* FOOTER */
+    footer {
+      background: var(--dark-bg); border-top: 1px solid rgba(184,151,58,0.2);
+      padding: 32px 40px; display: flex; align-items: center;
+      justify-content: space-between; flex-wrap: wrap; gap: 16px;
+    }
+    .footer-logo { font-family: var(--serif); font-size: 1.4rem; font-weight: 300; letter-spacing: 0.24em; color: var(--gold-light); }
+    .footer-text { font-family: var(--sans); font-size: 0.6rem; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(250,248,244,0.28); }
+
+    @media (max-width: 900px) {
+      nav { padding: 14px 24px; }
+      .nav-links { gap: 20px; }
+      .blog-hero { padding: 130px 24px 60px; }
+      .autores-strip { padding: 24px; }
+      .blog-main { padding: 48px 24px; }
+      .blog-grid { grid-template-columns: 1fr; }
+      .post-card.featured { flex-direction: column; }
+      .post-card.featured .post-img { width: 100%; min-height: 220px; }
+      footer { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="/">VERA</a>
+    <div class="nav-links">
+      <a href="/" class="nav-link">Producto</a>
+      <a href="/blog/" class="nav-link active">Blog</a>
+      <a href="https://www.instagram.com/somosvera.cordoba/" target="_blank" rel="noopener" class="nav-link">Instagram ↗</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="blog-hero">
+    <span class="blog-hero-label">Conocimiento · Ingredientes · Piel</span>
+    <h1 class="blog-hero-title">El Blog<br>de VERA</h1>
+    <p class="blog-hero-sub">
+      Cosmética limpia explicada sin rodeos. Por formuladoras, naturópatas y barberos
+      que saben lo que le ponen a su piel.
+    </p>
+  </div>
+
+  <!-- AUTORES -->
+  <div class="autores-strip">
+    <div class="autores-inner">
+      <span class="autores-label">Quiénes escriben</span>
+      <div class="autores-list">
+        <div class="autor-chip">
+          <div class="autor-avatar av-v">V</div>
+          <div>
+            <span class="autor-chip-name">Valentina Cruz</span>
+            <span class="autor-chip-role">Formuladora artesanal</span>
+          </div>
+        </div>
+        <div class="autor-chip">
+          <div class="autor-avatar av-l">L</div>
+          <div>
+            <span class="autor-chip-name">Lucía Montero</span>
+            <span class="autor-chip-role">Naturópata · Slow beauty</span>
+          </div>
+        </div>
+        <div class="autor-chip">
+          <div class="autor-avatar av-m">M</div>
+          <div>
+            <span class="autor-chip-name">Marcos Delgado</span>
+            <span class="autor-chip-role">Barbero · Cuidado masculino</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- POSTS -->
+  <main class="blog-main">
+    <div class="blog-grid">
+
+      <!-- POST 1 — FEATURED -->
+      <a href="/blog/que-es-el-tallow.html" class="post-card featured">
+        <div class="post-img img-bg-1">✦</div>
+        <div class="post-body">
+          <span class="post-category">Ingredientes · Lectura de 6 min</span>
+          <h2 class="post-title">¿Qué es el tallow y por qué cambia tu forma de ver la hidratación?</h2>
+          <p class="post-excerpt">
+            El sebo bovino purificado fue el hidratante más usado durante siglos. Después llegó la industria cosmética
+            y lo reemplazó por agua, siliconas y conservantes. Te contamos qué es exactamente el tallow, por qué
+            tu piel lo reconoce como propio y por qué estamos convencidas de que es el mejor ingrediente
+            que existe para hidratar de verdad.
+          </p>
+          <div class="post-meta">
+            <div class="post-meta-avatar av-v" style="background:#7A6A55;">V</div>
+            <div class="post-meta-info">
+              <span class="post-meta-name">Valentina Cruz</span>
+              <span class="post-meta-date">Junio 2026 · Formulación</span>
+            </div>
+          </div>
+          <span class="post-read-more">Leer nota →</span>
+        </div>
+      </a>
+
+      <!-- POST 2 -->
+      <a href="/blog/la-mentira-del-agua-en-tu-crema.html" class="post-card">
+        <div class="post-img img-bg-2">◎</div>
+        <div class="post-body">
+          <span class="post-category">Cosmética Limpia · 5 min</span>
+          <h2 class="post-title">Tu crema es 70% agua. Y lo que eso implica.</h2>
+          <p class="post-excerpt">
+            El primer ingrediente de casi cualquier crema de farmacia es "Aqua". No es casual:
+            el agua es el ingrediente más barato del mundo. Y viene acompañada de conservantes
+            que tu piel no pidió.
+          </p>
+          <div class="post-meta">
+            <div class="post-meta-avatar" style="background:#5C7A6A;">L</div>
+            <div class="post-meta-info">
+              <span class="post-meta-name">Lucía Montero</span>
+              <span class="post-meta-date">Junio 2026 · Ingredientes</span>
+            </div>
+          </div>
+          <span class="post-read-more">Leer nota →</span>
+        </div>
+      </a>
+
+      <!-- POST 3 -->
+      <a href="/blog/guia-cuidado-barba.html" class="post-card">
+        <div class="post-img img-bg-3">✧</div>
+        <div class="post-body">
+          <span class="post-category">Cuidado Masculino · 5 min</span>
+          <h2 class="post-title">El ritual de la barba: lo que un barbero no te dice en público.</h2>
+          <p class="post-excerpt">
+            Hay un secreto que los barberos más viejos conocen bien: la piel debajo de la barba
+            necesita hidratación real, no espuma con fragancia. Te cuento qué usamos de verdad
+            en la silla y por qué el tallow es el mejor aliado del afeitado.
+          </p>
+          <div class="post-meta">
+            <div class="post-meta-avatar" style="background:#4A4137;">M</div>
+            <div class="post-meta-info">
+              <span class="post-meta-name">Marcos Delgado</span>
+              <span class="post-meta-date">Julio 2026 · Barba y Piel</span>
+            </div>
+          </div>
+          <span class="post-read-more">Leer nota →</span>
+        </div>
+      </a>
+
+      <!-- POST 4 -->
+      <a href="/blog/como-leer-ingredientes-cosmeticos.html" class="post-card">
+        <div class="post-img img-bg-4">〰</div>
+        <div class="post-body">
+          <span class="post-category">Guías · 7 min</span>
+          <h2 class="post-title">INCI: el idioma secreto de los cosméticos (y cómo descifrarlo).</h2>
+          <p class="post-excerpt">
+            Cada producto cosmético tiene una lista de ingredientes en latín que nadie entiende.
+            Se llama INCI. Una vez que aprendés a leerla, nunca más comprás una crema
+            sin mirarla primero.
+          </p>
+          <div class="post-meta">
+            <div class="post-meta-avatar" style="background:#5C7A6A;">L</div>
+            <div class="post-meta-info">
+              <span class="post-meta-name">Lucía Montero</span>
+              <span class="post-meta-date">Julio 2026 · Ingredientes</span>
+            </div>
+          </div>
+          <span class="post-read-more">Leer nota →</span>
+        </div>
+      </a>
+
+    </div>
+  </main>
+
+  <!-- CTA PRODUCTO -->
+  <div class="newsletter">
+    <p class="newsletter-title">Probá la diferencia<br>en tu propia piel.</p>
+    <p class="newsletter-sub">Dos ingredientes. Sin agua. Sin conservantes. Hecho a mano en Córdoba.</p>
+    <a href="https://wa.me/5493515585046?text=Hola!%20Vi%20el%20blog%20de%20VERA%20y%20quiero%20encargar%20mi%20lata." class="newsletter-cta" target="_blank" rel="noopener">Encargar mi lata por WhatsApp</a>
+  </div>
+
+  <footer>
+    <span class="footer-logo">VERA</span>
+    <span class="footer-text">Cosmética Ancestral · Córdoba, Argentina</span>
+    <a href="https://wa.me/5493515585046" class="footer-text" style="text-decoration:none; opacity:0.7;" target="_blank" rel="noopener">+54 9 351 558 5046</a>
+    <a href="https://www.instagram.com/somosvera.cordoba/" class="footer-text" style="text-decoration:none; opacity:0.7;" target="_blank" rel="noopener">@somosvera.cordoba</a>
+    <span class="footer-text">© 2026 VERA</span>
+  </footer>
+
+</body>
+</html>

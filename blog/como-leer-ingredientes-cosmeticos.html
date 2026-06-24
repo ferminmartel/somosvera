@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>INCI: cómo leer la lista de ingredientes de tu crema — Blog VERA</title>
+  <meta name="description" content="Cada cosmético tiene una lista de ingredientes en latín que nadie entiende. Se llama INCI. Una vez que aprendés a leerla, nunca más comprás una crema sin mirarla primero.">
+  <link rel="canonical" href="https://somosvera.com.ar/blog/como-leer-ingredientes-cosmeticos.html">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8P85FS23PB"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-8P85FS23PB');</script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --cream: #F0EDE6; --cream-dark: #E4DFD6; --charcoal: #2E2B27; --bronze: #4A4137; --bronze-mid: #7A6A55; --gold: #B8973A; --gold-light: #D4B96A; --white-warm: #FAF8F4; --dark-bg: #262320; --serif: 'Cormorant Garamond', Georgia, serif; --sans: 'Montserrat', Arial, sans-serif; }
+    body { font-family: var(--sans); background: var(--cream); color: var(--charcoal); -webkit-font-smoothing: antialiased; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 18px 40px; display: flex; justify-content: space-between; align-items: center; background: rgba(240,237,230,0.94); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(74,65,55,0.12); }
+    .nav-logo { font-family: var(--serif); font-size: 1.6rem; font-weight: 600; letter-spacing: 0.28em; color: var(--bronze); text-decoration: none; }
+    .nav-links { display: flex; gap: 32px; }
+    .nav-link { font-family: var(--sans); font-size: 0.62rem; letter-spacing: 0.14em; color: var(--bronze-mid); text-decoration: none; transition: color 0.2s; }
+    .nav-link:hover { color: var(--bronze); }
+    .article-hero { padding: 140px 40px 60px; background: var(--dark-bg); }
+    .article-hero-inner { max-width: 760px; margin: 0 auto; }
+    .article-category { font-family: var(--sans); font-size: 0.55rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 24px; }
+    .article-title { font-family: var(--serif); font-size: clamp(2rem, 4.5vw, 3.4rem); font-weight: 300; color: var(--white-warm); line-height: 1.2; margin-bottom: 28px; }
+    .article-excerpt { font-family: var(--serif); font-size: 1.1rem; font-weight: 300; font-style: italic; color: rgba(250,248,244,0.65); line-height: 1.75; margin-bottom: 36px; }
+    .article-meta { display: flex; align-items: center; gap: 14px; }
+    .article-avatar { width: 44px; height: 44px; border-radius: 50%; background: #5C7A6A; display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 1rem; color: var(--white-warm); }
+    .article-meta-name { font-family: var(--sans); font-size: 0.65rem; font-weight: 500; color: var(--white-warm); }
+    .article-meta-date { font-family: var(--sans); font-size: 0.58rem; color: rgba(250,248,244,0.45); display: block; margin-top: 3px; }
+    .article-wrap { max-width: 760px; margin: 0 auto; padding: 70px 40px 100px; }
+    .back-link { display: inline-block; margin-bottom: 40px; font-family: var(--sans); font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--bronze-mid); text-decoration: none; }
+    .article-body h2 { font-family: var(--serif); font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 300; color: var(--bronze); margin: 56px 0 20px; line-height: 1.25; }
+    .article-body p { font-family: var(--sans); font-size: 0.82rem; font-weight: 300; line-height: 2; color: var(--charcoal); margin-bottom: 24px; }
+    .article-body strong { font-weight: 500; color: var(--bronze); }
+    .pullquote { margin: 48px 0; padding: 36px 44px; border-left: 3px solid var(--gold); background: var(--cream-dark); }
+    .pullquote p { font-family: var(--serif); font-size: 1.3rem; font-weight: 300; font-style: italic; color: var(--bronze); line-height: 1.65; margin: 0; }
+    .article-divider { width: 48px; height: 1px; background: var(--gold); margin: 48px 0; }
+    .inci-example { background: var(--charcoal); padding: 36px; margin: 40px 0; }
+    .inci-example-title { font-family: var(--sans); font-size: 0.55rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 20px; }
+    .inci-list { font-family: var(--sans); font-size: 0.78rem; font-weight: 300; line-height: 2.2; color: rgba(250,248,244,0.6); font-style: italic; }
+    .inci-list .highlight { color: var(--gold-light); font-style: normal; font-weight: 400; }
+    .inci-list .warning { color: #E8A87C; font-style: normal; }
+    .inci-legend { display: flex; gap: 24px; margin-top: 20px; flex-wrap: wrap; }
+    .inci-legend-item { display: flex; align-items: center; gap: 8px; font-family: var(--sans); font-size: 0.6rem; color: rgba(250,248,244,0.5); }
+    .dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+    .red-flags { margin: 40px 0; }
+    .red-flag-item { padding: 20px 24px; border-bottom: 1px solid rgba(74,65,55,0.1); display: flex; gap: 20px; align-items: flex-start; }
+    .red-flag-name { font-family: var(--sans); font-size: 0.72rem; font-weight: 500; color: var(--bronze); margin-bottom: 6px; font-style: italic; }
+    .red-flag-text { font-family: var(--sans); font-size: 0.74rem; font-weight: 300; color: var(--bronze-mid); line-height: 1.7; }
+    .red-flag-num { font-family: var(--serif); font-size: 1.4rem; color: var(--gold); min-width: 28px; padding-top: 2px; }
+    .author-bio { margin-top: 72px; padding: 40px; background: var(--cream-dark); border-left: 2px solid var(--gold); display: flex; gap: 28px; align-items: flex-start; }
+    .author-bio-avatar { width: 60px; height: 60px; border-radius: 50%; background: #5C7A6A; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 1.4rem; color: var(--white-warm); }
+    .author-bio-label { font-family: var(--sans); font-size: 0.55rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 8px; }
+    .author-bio-name { font-family: var(--serif); font-size: 1.3rem; color: var(--bronze); margin-bottom: 10px; }
+    .author-bio-text { font-family: var(--sans); font-size: 0.74rem; font-weight: 300; line-height: 1.85; color: var(--bronze-mid); }
+    .post-cta { background: var(--dark-bg); padding: 80px 40px; text-align: center; }
+    .post-cta-title { font-family: var(--serif); font-size: clamp(1.6rem,3vw,2.4rem); font-weight: 300; color: var(--white-warm); margin-bottom: 16px; }
+    .post-cta-sub { font-family: var(--sans); font-size: 0.76rem; font-weight: 300; color: rgba(250,248,244,0.5); max-width: 440px; margin: 0 auto 36px; line-height: 1.85; }
+    .btn-cta { display: inline-block; font-family: var(--sans); font-size: 0.68rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--dark-bg); background: var(--gold-light); padding: 16px 40px; text-decoration: none; transition: background 0.25s; }
+    .btn-cta:hover { background: var(--gold); }
+    footer { background: var(--dark-bg); border-top: 1px solid rgba(184,151,58,0.2); padding: 32px 40px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-logo { font-family: var(--serif); font-size: 1.4rem; font-weight: 300; letter-spacing: 0.24em; color: var(--gold-light); }
+    .footer-text { font-family: var(--sans); font-size: 0.6rem; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(250,248,244,0.28); text-decoration: none; }
+    @media (max-width: 760px) { nav { padding: 14px 24px; } .article-hero { padding: 120px 24px 48px; } .article-wrap { padding: 48px 24px 72px; } .author-bio { flex-direction: column; } footer { flex-direction: column; text-align: center; } }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="/">VERA</a>
+    <div class="nav-links">
+      <a href="/" class="nav-link">Producto</a>
+      <a href="/blog/" class="nav-link">Blog</a>
+      <a href="https://www.instagram.com/somosvera.cordoba/" target="_blank" rel="noopener" class="nav-link">Instagram ↗</a>
+    </div>
+  </nav>
+
+  <div class="article-hero">
+    <div class="article-hero-inner">
+      <span class="article-category">Guías · Ingredientes · 7 min de lectura</span>
+      <h1 class="article-title">INCI: el idioma secreto de los cosméticos (y cómo descifrarlo).</h1>
+      <p class="article-excerpt">Cada producto cosmético tiene una lista de ingredientes en latín que nadie entiende. Se llama INCI. Una vez que aprendés a leerla, nunca más comprás una crema sin mirarla primero.</p>
+      <div class="article-meta">
+        <div class="article-avatar">L</div>
+        <div>
+          <span class="article-meta-name">Lucía Montero — Naturópata · Slow beauty</span>
+          <span class="article-meta-date">Julio de 2026 · VERA, Córdoba</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-wrap">
+    <a href="/blog/" class="back-link">← Volver al blog</a>
+
+    <div class="article-body">
+
+      <p>La próxima vez que estés en una farmacia o perfumería, tomá cualquier crema y leé la parte de atrás. Vas a ver algo así: <em>"Aqua, Glycerin, Cetearyl Alcohol, Dimethicone, Phenoxyethanol, Carbomer, Methylparaben..."</em>. Una lista de nombres en latín o inglés técnico que parece diseñada para que no entiendas nada.</p>
+
+      <p>No es casualidad. Se llama <strong>INCI</strong> — International Nomenclature of Cosmetic Ingredients — y es el sistema internacional que obliga a todos los fabricantes a listar los ingredientes con nombres técnicos estandarizados. La buena noticia: una vez que sabés las reglas básicas, podés leer cualquier lista del mundo.</p>
+
+      <h2>La regla más importante: el orden</h2>
+
+      <p>Los ingredientes se listan <strong>de mayor a menor concentración</strong>. El que aparece primero es el que más abunda. El que aparece último puede estar en concentraciones de menos del 1%.</p>
+
+      <p>Esto tiene una implicancia directa: si el primer ingrediente es "Aqua", tu crema es mayoritariamente agua. Si el tercer ingrediente es "Dimethicone" (silicona), hay una cantidad importante de silicona en ese producto. Si el ingrediente "estrella" que aparece en la publicidad aparece al final de la lista, probablemente esté en una concentración tan baja que no tiene efecto real.</p>
+
+      <div class="pullquote">
+        <p>"Los ingredientes activos de verdad están al principio de la lista. Los que aparecen al final existen para cumplir con marketing, no para cumplir con tu piel."</p>
+      </div>
+
+      <h2>Cómo se ve una lista INCI en la práctica</h2>
+
+      <div class="inci-example">
+        <span class="inci-example-title">Ejemplo real — crema hidratante convencional de farmacia</span>
+        <p class="inci-list">
+          <span class="highlight">Aqua</span>, Glycerin, Cetearyl Alcohol, <span class="warning">Dimethicone</span>, Ceteareth-20, Mineral Oil, <span class="warning">Phenoxyethanol</span>, Carbomer, Sodium Hydroxide, Tocopheryl Acetate, <span class="warning">Methylparaben</span>, <span class="warning">Propylparaben</span>, Parfum, Aloe Barbadensis Leaf Extract, Sodium Hyaluronate
+        </p>
+        <div class="inci-legend">
+          <div class="inci-legend-item"><div class="dot" style="background:#D4B96A;"></div> Ingrediente principal (alto %)</div>
+          <div class="inci-legend-item"><div class="dot" style="background:#E8A87C;"></div> Ingredientes a revisar</div>
+        </div>
+      </div>
+
+      <p>¿Ves el hyaluronato de sodio al final? Ese es el ingrediente del que hablan en la publicidad. Está después de los parabenos, lo que significa que está en menos del 1%. Decorativo.</p>
+
+      <h2>Ingredientes frecuentes: qué hacen en la fórmula</h2>
+
+      <div class="red-flags">
+        <div class="red-flag-item">
+          <span class="red-flag-num">1</span>
+          <div>
+            <p class="red-flag-name">Dimethicone / Cyclopentasiloxane</p>
+            <p class="red-flag-text">Siliconas. Dan sensación de suavidad inmediata porque forman una película sobre la piel. Son inertes y seguros, pero no aportan nutrientes: la sensación de hidratación que generan es superficial. Desde una cosmética ancestral, trabajamos con grasas que la piel puede reconocer e integrar, no con películas que la cubren.</p>
+          </div>
+        </div>
+        <div class="red-flag-item">
+          <span class="red-flag-num">2</span>
+          <div>
+            <p class="red-flag-name">Methylparaben / Propylparaben / Butylparaben</p>
+            <p class="red-flag-text">Conservantes. Necesarios cuando hay agua en la fórmula. Cuestionados por actividad estrogénica débil y por bioacumularse en tejidos. La industria los defiende; la evidencia emergente sugiere precaución.</p>
+          </div>
+        </div>
+        <div class="red-flag-item">
+          <span class="red-flag-num">3</span>
+          <div>
+            <p class="red-flag-name">Parfum / Fragrance</p>
+            <p class="red-flag-text">Una palabra que puede esconder cientos de compuestos químicos sin declarar. La regulación permite agrupar toda la fragancia bajo ese término. Es una de las principales causas de alergia de contacto en cosméticos.</p>
+          </div>
+        </div>
+        <div class="red-flag-item">
+          <span class="red-flag-num">4</span>
+          <div>
+            <p class="red-flag-name">Mineral Oil / Petrolatum</p>
+            <p class="red-flag-text">Derivados del petróleo. Baratos, estables y con bajo riesgo de alergia. El problema no es la toxicidad sino lo que no hacen: forman una barrera oclusiva sin aportar ningún nutriente a la piel. El equivalente de tapar un agujero sin repararlo.</p>
+          </div>
+        </div>
+        <div class="red-flag-item">
+          <span class="red-flag-num">5</span>
+          <div>
+            <p class="red-flag-name">Phenoxyethanol</p>
+            <p class="red-flag-text">El conservante que reemplazó a los parabenos en muchas fórmulas. Es más reciente, con menos trayectoria de estudio a largo plazo. Su presencia en la lista simplemente confirma que el producto tiene agua y necesita protección microbiana.</p>
+          </div>
+        </div>
+      </div>
+
+      <h2>¿Cómo se ve la lista INCI de VERA?</h2>
+
+      <p>Nos lo preguntan seguido, así que acá va:</p>
+
+      <div class="inci-example">
+        <span class="inci-example-title">INCI — VERA Crema Esencial</span>
+        <p class="inci-list">
+          <span class="highlight">Bos Taurus Tallow</span> (Tallow Bovino Purificado), <span class="highlight">Citrus Bergamia Peel Oil</span>, <span class="highlight">Pelargonium Graveolens Flower Oil</span>, <span class="highlight">Lavandula Angustifolia Oil</span>
+        </p>
+        <div class="inci-legend">
+          <div class="inci-legend-item"><div class="dot" style="background:#D4B96A;"></div> Todos los ingredientes son activos. No hay rellenos.</div>
+        </div>
+      </div>
+
+      <p>Cuatro ingredientes. Todos al principio de la lista porque son los únicos. El tallow bovino purificado como base, y los aceites esenciales de bergamota, geranio y lavanda como activos aromáticos. No hay "Aqua". No hay conservantes. No hay siliconas. No hay "Parfum" que esconda nada.</p>
+
+      <div class="article-divider"></div>
+
+      <p>Leer el INCI lleva dos minutos y te da más información real sobre un producto que cualquier publicidad. La próxima vez que veas una crema con 25 ingredientes y el activo estrella al final de la lista, ya sabés lo que estás comprando.</p>
+
+    </div>
+
+    <div class="author-bio">
+      <div class="author-bio-avatar">L</div>
+      <div>
+        <span class="author-bio-label">Sobre la autora</span>
+        <p class="author-bio-name">Lucía Montero</p>
+        <p class="author-bio-text">
+          Naturópata y especialista en cosmética limpia. Estudia el impacto de los ingredientes cosméticos
+          en la microbiota de la piel y en el bienestar integral. Defensora del enfoque "slow beauty":
+          menos productos, mejores ingredientes. Escribe en el blog de VERA desde sus inicios.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- RELATED POSTS -->
+  <div style="background:var(--cream-dark); padding:64px 40px; border-top:1px solid rgba(74,65,55,0.1);">
+    <div style="max-width:760px; margin:0 auto;">
+      <span style="font-family:var(--sans); font-size:0.55rem; letter-spacing:0.28em; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:32px;">Seguí leyendo</span>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:2px; background:rgba(74,65,55,0.08);">
+                <a href="/blog/que-es-el-tallow.html" style="background:var(--white-warm); padding:32px; text-decoration:none; display:block; transition:background 0.2s;" onmouseover="this.style.background='var(--cream)'" onmouseout="this.style.background='var(--white-warm)'">
+          <span style="font-family:var(--sans); font-size:0.5rem; letter-spacing:0.24em; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:12px;">Ingredientes</span>
+          <p style="font-family:var(--serif); font-size:1.15rem; font-weight:300; color:var(--bronze); line-height:1.3; margin-bottom:20px;">¿Qué es el tallow y por qué cambia tu hidratación?</p>
+          <div style="display:flex; align-items:center; gap:10px;">
+            <div style="width:28px; height:28px; border-radius:50%; background:#7A6A55; display:flex; align-items:center; justify-content:center; font-family:var(--serif); font-size:0.7rem; color:#FAF8F4;">V</div>
+            <span style="font-family:var(--sans); font-size:0.58rem; color:var(--bronze-mid);">Valentina Cruz</span>
+          </div>
+        </a>
+        <a href="/blog/guia-cuidado-barba.html" style="background:var(--white-warm); padding:32px; text-decoration:none; display:block; transition:background 0.2s;" onmouseover="this.style.background='var(--cream)'" onmouseout="this.style.background='var(--white-warm)'">
+          <span style="font-family:var(--sans); font-size:0.5rem; letter-spacing:0.24em; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:12px;">Cuidado Masculino</span>
+          <p style="font-family:var(--serif); font-size:1.15rem; font-weight:300; color:var(--bronze); line-height:1.3; margin-bottom:20px;">El ritual de la barba: lo que un barbero no te dice.</p>
+          <div style="display:flex; align-items:center; gap:10px;">
+            <div style="width:28px; height:28px; border-radius:50%; background:#4A4137; display:flex; align-items:center; justify-content:center; font-family:var(--serif); font-size:0.7rem; color:#FAF8F4;">M</div>
+            <span style="font-family:var(--sans); font-size:0.58rem; color:var(--bronze-mid);">Marcos Delgado</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-cta">
+    <p class="post-cta-title">La lista de ingredientes<br>más corta que vas a leer.</p>
+    <p class="post-cta-sub">Tallow Bovino Purificado + Aceites Esenciales. Eso es todo. Sin rellenos, sin conservantes, sin agua.</p>
+    <a href="https://wa.me/5493515585046?text=Hola!%20Le%C3%AD%20el%20blog%20de%20VERA%20y%20quiero%20encargar%20mi%20lata." class="btn-cta" target="_blank" rel="noopener">Encargar por WhatsApp</a>
+  </div>
+
+  <footer>
+    <span class="footer-logo">VERA</span>
+    <span class="footer-text">Cosmética Ancestral · Córdoba, Argentina</span>
+    <a href="https://www.instagram.com/somosvera.cordoba/" class="footer-text" target="_blank" rel="noopener">@somosvera.cordoba</a>
+    <span class="footer-text">© 2026 VERA</span>
+  </footer>
+
+</body>
+</html>

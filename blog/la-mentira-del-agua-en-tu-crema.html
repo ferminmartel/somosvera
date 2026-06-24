@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tu crema es 70% agua. Y lo que eso implica. — Blog VERA</title>
+  <meta name="description" content="El primer ingrediente de casi cualquier crema de farmacia es 'Aqua'. El agua es barata. Pero viene con conservantes que tu piel no pidió. Lo que nadie te cuenta sobre las cremas convencionales.">
+  <link rel="canonical" href="https://somosvera.com.ar/blog/la-mentira-del-agua-en-tu-crema.html">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8P85FS23PB"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-8P85FS23PB');</script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream: #F0EDE6; --cream-dark: #E4DFD6;
+      --charcoal: #2E2B27; --bronze: #4A4137; --bronze-mid: #7A6A55;
+      --gold: #B8973A; --gold-light: #D4B96A; --white-warm: #FAF8F4; --dark-bg: #262320;
+      --serif: 'Cormorant Garamond', Georgia, serif; --sans: 'Montserrat', Arial, sans-serif;
+    }
+    body { font-family: var(--sans); background: var(--cream); color: var(--charcoal); -webkit-font-smoothing: antialiased; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 18px 40px; display: flex; justify-content: space-between; align-items: center; background: rgba(240,237,230,0.94); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(74,65,55,0.12); }
+    .nav-logo { font-family: var(--serif); font-size: 1.6rem; font-weight: 600; letter-spacing: 0.28em; color: var(--bronze); text-decoration: none; }
+    .nav-links { display: flex; gap: 32px; }
+    .nav-link { font-family: var(--sans); font-size: 0.62rem; letter-spacing: 0.14em; color: var(--bronze-mid); text-decoration: none; transition: color 0.2s; }
+    .nav-link:hover { color: var(--bronze); }
+    .article-hero { padding: 140px 40px 60px; background: var(--dark-bg); }
+    .article-hero-inner { max-width: 760px; margin: 0 auto; }
+    .article-category { font-family: var(--sans); font-size: 0.55rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 24px; }
+    .article-title { font-family: var(--serif); font-size: clamp(2rem, 4.5vw, 3.4rem); font-weight: 300; color: var(--white-warm); line-height: 1.2; margin-bottom: 28px; }
+    .article-excerpt { font-family: var(--serif); font-size: 1.1rem; font-weight: 300; font-style: italic; color: rgba(250,248,244,0.65); line-height: 1.75; margin-bottom: 36px; }
+    .article-meta { display: flex; align-items: center; gap: 14px; }
+    .article-avatar { width: 44px; height: 44px; border-radius: 50%; background: #5C7A6A; display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 1rem; color: var(--white-warm); }
+    .article-meta-name { font-family: var(--sans); font-size: 0.65rem; font-weight: 500; color: var(--white-warm); }
+    .article-meta-date { font-family: var(--sans); font-size: 0.58rem; color: rgba(250,248,244,0.45); display: block; margin-top: 3px; }
+    .article-wrap { max-width: 760px; margin: 0 auto; padding: 70px 40px 100px; }
+    .back-link { display: inline-block; margin-bottom: 40px; font-family: var(--sans); font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--bronze-mid); text-decoration: none; transition: color 0.2s; }
+    .back-link:hover { color: var(--bronze); }
+    .article-body h2 { font-family: var(--serif); font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 300; color: var(--bronze); margin: 56px 0 20px; line-height: 1.25; }
+    .article-body p { font-family: var(--sans); font-size: 0.82rem; font-weight: 300; line-height: 2; color: var(--charcoal); margin-bottom: 24px; }
+    .article-body strong { font-weight: 500; color: var(--bronze); }
+    .article-body ul { margin: 0 0 24px 0; padding-left: 0; list-style: none; }
+    .article-body ul li { font-family: var(--sans); font-size: 0.82rem; font-weight: 300; line-height: 1.9; color: var(--charcoal); padding: 10px 0 10px 24px; border-bottom: 1px solid rgba(74,65,55,0.08); position: relative; }
+    .article-body ul li::before { content: "✦"; position: absolute; left: 0; color: var(--gold); font-size: 0.5rem; top: 14px; }
+    .pullquote { margin: 48px 0; padding: 36px 44px; border-left: 3px solid var(--gold); background: var(--cream-dark); }
+    .pullquote p { font-family: var(--serif); font-size: 1.3rem; font-weight: 300; font-style: italic; color: var(--bronze); line-height: 1.65; margin: 0; }
+    .article-divider { width: 48px; height: 1px; background: var(--gold); margin: 48px 0; }
+    .ingredient-box { background: var(--dark-bg); padding: 36px; margin: 40px 0; }
+    .ingredient-box-title { font-family: var(--sans); font-size: 0.55rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 20px; }
+    .ingredient-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .ingredient-col-title { font-family: var(--serif); font-size: 1rem; color: var(--white-warm); margin-bottom: 14px; }
+    .ingredient-col-bad .ingredient-col-title { color: rgba(250,248,244,0.5); }
+    .ingredient-item { font-family: var(--sans); font-size: 0.72rem; font-weight: 300; color: rgba(250,248,244,0.55); padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .ingredient-item.vera { color: var(--gold-light); font-weight: 400; }
+    .author-bio { margin-top: 72px; padding: 40px; background: var(--cream-dark); border-left: 2px solid var(--gold); display: flex; gap: 28px; align-items: flex-start; }
+    .author-bio-avatar { width: 60px; height: 60px; border-radius: 50%; background: #5C7A6A; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 1.4rem; color: var(--white-warm); }
+    .author-bio-label { font-family: var(--sans); font-size: 0.55rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 8px; }
+    .author-bio-name { font-family: var(--serif); font-size: 1.3rem; color: var(--bronze); margin-bottom: 10px; }
+    .author-bio-text { font-family: var(--sans); font-size: 0.74rem; font-weight: 300; line-height: 1.85; color: var(--bronze-mid); }
+    .post-cta { background: var(--dark-bg); padding: 80px 40px; text-align: center; }
+    .post-cta-title { font-family: var(--serif); font-size: clamp(1.6rem,3vw,2.4rem); font-weight: 300; color: var(--white-warm); margin-bottom: 16px; }
+    .post-cta-sub { font-family: var(--sans); font-size: 0.76rem; font-weight: 300; color: rgba(250,248,244,0.5); max-width: 440px; margin: 0 auto 36px; line-height: 1.85; }
+    .btn-cta { display: inline-block; font-family: var(--sans); font-size: 0.68rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--dark-bg); background: var(--gold-light); padding: 16px 40px; text-decoration: none; transition: background 0.25s; }
+    .btn-cta:hover { background: var(--gold); }
+    footer { background: var(--dark-bg); border-top: 1px solid rgba(184,151,58,0.2); padding: 32px 40px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-logo { font-family: var(--serif); font-size: 1.4rem; font-weight: 300; letter-spacing: 0.24em; color: var(--gold-light); }
+    .footer-text { font-family: var(--sans); font-size: 0.6rem; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(250,248,244,0.28); text-decoration: none; }
+    @media (max-width: 760px) { nav { padding: 14px 24px; } .article-hero { padding: 120px 24px 48px; } .article-wrap { padding: 48px 24px 72px; } .ingredient-compare { grid-template-columns: 1fr; } .author-bio { flex-direction: column; } footer { flex-direction: column; text-align: center; } }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="/">VERA</a>
+    <div class="nav-links">
+      <a href="/" class="nav-link">Producto</a>
+      <a href="/blog/" class="nav-link">Blog</a>
+      <a href="https://www.instagram.com/somosvera.cordoba/" target="_blank" rel="noopener" class="nav-link">Instagram ↗</a>
+    </div>
+  </nav>
+
+  <div class="article-hero">
+    <div class="article-hero-inner">
+      <span class="article-category">Cosmética Limpia · 5 min de lectura</span>
+      <h1 class="article-title">Tu crema es 70% agua.<br>Y lo que eso implica.</h1>
+      <p class="article-excerpt">El primer ingrediente de casi cualquier crema de farmacia o perfumería es "Aqua". No es casual. El agua es el ingrediente más barato del mundo. Pero viene con un costo oculto que nadie pone en el frente del envase.</p>
+      <div class="article-meta">
+        <div class="article-avatar">L</div>
+        <div>
+          <span class="article-meta-name">Lucía Montero — Naturópata · Slow beauty</span>
+          <span class="article-meta-date">Junio de 2026 · VERA, Córdoba</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-wrap">
+    <a href="/blog/" class="back-link">← Volver al blog</a>
+
+    <div class="article-body">
+
+      <p>La próxima vez que tengas una crema hidratante en la mano, dala vuelta y mirá la lista de ingredientes. En el 90% de los casos, el primero dice <strong>Aqua</strong>. Los ingredientes en cosmética se listan por orden de concentración: el que aparece primero es el que más abunda. Tu crema, en su mayor parte, es agua.</p>
+
+      <p>Esto no es necesariamente malo en sí mismo. El problema es lo que viene después del agua.</p>
+
+      <h2>El problema no es el agua: son los conservantes</h2>
+
+      <p>El agua es un ambiente perfecto para el crecimiento de bacterias, levaduras y hongos. Una crema que es 60-80% agua y que va a vivir meses en tu baño necesita conservantes para no convertirse en un caldo de cultivo. Por eso, en casi todas las cremas convencionales vas a encontrar alguno de estos:</p>
+
+      <ul>
+        <li><strong>Parabenos</strong> (methylparaben, propylparaben, butylparaben) — conservantes de amplio espectro, cuestionados por su actividad estrogénica débil</li>
+        <li><strong>Phenoxyethanol</strong> — uno de los más usados hoy como "alternativa" a los parabenos, pero con su propio perfil de controversia</li>
+        <li><strong>Formaldehído y liberadores de formaldehído</strong> — como DMDM Hydantoin o Imidazolidinyl Urea</li>
+        <li><strong>Benzyl alcohol</strong> — conservante que en algunas personas genera irritación de contacto</li>
+      </ul>
+
+      <p>No es una cuestión de señalar cada ingrediente como peligroso. Es entender la lógica de la fórmula: si no hubiera agua, no harían falta conservantes.</p>
+
+      <div class="pullquote">
+        <p>"Una fórmula anhidra — sin agua — no tiene ambiente para las bacterias. Sin bacterias, no hay necesidad de conservantes. La solución más simple es la más antigua."</p>
+      </div>
+
+      <h2>El agua como vehículo, no como ingrediente activo</h2>
+
+      <p>El agua en una crema no hidrata tu piel de forma duradera. Al contrario: si aplicás una crema con mucha agua sobre una piel seca, la sensación inicial es de frescura, pero en pocas horas la piel puede estar más seca que antes. El agua se evapora, y cuando lo hace, arrastra parte de la hidratación natural de la piel con ella. Es el mismo principio que explica por qué lavarse las manos muchas veces reseca la piel.</p>
+
+      <p>Los ingredientes que realmente hidratan son las grasas: los aceites, las ceras, las mantecas. El agua actúa como vehículo para emulsionar esas grasas y darle una textura fluida al producto. Esa textura fluida es agradable de aplicar y hace que el producto parezca "ligero". Pero esa ligereza viene a costa de concentración.</p>
+
+      <h2>Qué pasa con una fórmula sin agua</h2>
+
+      <p>Una crema anhidra — sin agua — funciona de forma diferente. Aplicás una cantidad muy pequeña, la calentás entre las palmas y se convierte en un aceite que la piel absorbe. Sin agua, toda la fórmula es activo. No hay relleno.</p>
+
+      <div class="ingredient-box">
+        <span class="ingredient-box-title">Comparación de fórmulas — lo que dice la lista de ingredientes</span>
+        <div class="ingredient-compare">
+          <div class="ingredient-col-bad">
+            <p class="ingredient-col-title">Crema convencional típica</p>
+            <p class="ingredient-item">Aqua (70-80%)</p>
+            <p class="ingredient-item">Glycerin</p>
+            <p class="ingredient-item">Cetearyl Alcohol</p>
+            <p class="ingredient-item">Dimethicone</p>
+            <p class="ingredient-item">Phenoxyethanol</p>
+            <p class="ingredient-item">Methylparaben</p>
+            <p class="ingredient-item">Carbomer</p>
+            <p class="ingredient-item">+ 12 ingredientes más...</p>
+          </div>
+          <div>
+            <p class="ingredient-col-title" style="color: var(--gold-light);">VERA</p>
+            <p class="ingredient-item vera">Tallow Bovino Purificado</p>
+            <p class="ingredient-item vera">Aceites Esenciales Naturales</p>
+            <p class="ingredient-item" style="color:rgba(250,248,244,0.25); font-style:italic;">— eso es todo —</p>
+          </div>
+        </div>
+      </div>
+
+      <h2>¿Significa esto que hay que cambiar toda tu rutina?</h2>
+
+      <p>No necesariamente. Hay formulaciones convencionales bien hechas, con ingredientes en concentraciones razonables. La pregunta que vale hacerse es más simple: <strong>¿qué porcentaje de lo que pagás es ingrediente activo y qué porcentaje es vehículo?</strong></p>
+
+      <p>Mirá la lista de ingredientes de tu crema. Si "Aqua" aparece primero y el ingrediente que aparece en la publicidad está al final de la lista, ya tenés una respuesta clara.</p>
+
+      <div class="article-divider"></div>
+
+      <p>En VERA tomamos la decisión contraria desde el principio: ningún ingrediente que no sea absolutamente necesario. El resultado es una fórmula de dos ingredientes que no necesita conservantes, no tiene agua, y no deja tu piel con la misma sed dos horas después.</p>
+
+    </div>
+
+    <div class="author-bio">
+      <div class="author-bio-avatar">L</div>
+      <div>
+        <span class="author-bio-label">Sobre la autora</span>
+        <p class="author-bio-name">Lucía Montero</p>
+        <p class="author-bio-text">
+          Naturópata y especialista en cosmética limpia. Estudia el impacto de los ingredientes cosméticos
+          en la microbiota de la piel y en el bienestar integral. Defensora del enfoque "slow beauty":
+          menos productos, mejores ingredientes. Escribe en el blog de VERA desde sus inicios.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- RELATED POSTS -->
+  <div style="background:var(--cream-dark); padding:64px 40px; border-top:1px solid rgba(74,65,55,0.1);">
+    <div style="max-width:760px; margin:0 auto;">
+      <span style="font-family:var(--sans); font-size:0.55rem; letter-spacing:0.28em; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:32px;">Seguí leyendo</span>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:2px; background:rgba(74,65,55,0.08);">
+                <a href="/blog/que-es-el-tallow.html" style="background:var(--white-warm); padding:32px; text-decoration:none; display:block; transition:background 0.2s;" onmouseover="this.style.background='var(--cream)'" onmouseout="this.style.background='var(--white-warm)'">
+          <span style="font-family:var(--sans); font-size:0.5rem; letter-spacing:0.24em; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:12px;">Ingredientes</span>
+          <p style="font-family:var(--serif); font-size:1.15rem; font-weight:300; color:var(--bronze); line-height:1.3; margin-bottom:20px;">¿Qué es el tallow y por qué cambia tu hidratación?</p>
+          <div style="display:flex; align-items:center; gap:10px;">
+            <div style="width:28px; height:28px; border-radius:50%; background:#7A6A55; display:flex; align-items:center; justify-content:center; font-family:var(--serif); font-size:0.7rem; color:#FAF8F4;">V</div>
+            <span style="font-family:var(--sans); font-size:0.58rem; color:var(--bronze-mid);">Valentina Cruz</span>
+          </div>
+        </a>
+        <a href="/blog/como-leer-ingredientes-cosmeticos.html" style="background:var(--white-warm); padding:32px; text-decoration:none; display:block; transition:background 0.2s;" onmouseover="this.style.background='var(--cream)'" onmouseout="this.style.background='var(--white-warm)'">
+          <span style="font-family:var(--sans); font-size:0.5rem; letter-spacing:0.24em; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:12px;">Guías</span>
+          <p style="font-family:var(--serif); font-size:1.15rem; font-weight:300; color:var(--bronze); line-height:1.3; margin-bottom:20px;">INCI: el idioma secreto de los cosméticos.</p>
+          <div style="display:flex; align-items:center; gap:10px;">
+            <div style="width:28px; height:28px; border-radius:50%; background:#5C7A6A; display:flex; align-items:center; justify-content:center; font-family:var(--serif); font-size:0.7rem; color:#FAF8F4;">L</div>
+            <span style="font-family:var(--sans); font-size:0.58rem; color:var(--bronze-mid);">Lucía Montero</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-cta">
+    <p class="post-cta-title">Sin agua. Sin conservantes.<br>Sin vueltas.</p>
+    <p class="post-cta-sub">VERA es tallow bovino purificado + aceites esenciales. Dos ingredientes. Hecho a mano en Córdoba.</p>
+    <a href="https://wa.me/5493515585046?text=Hola!%20Le%C3%AD%20el%20blog%20de%20VERA%20y%20quiero%20encargar%20mi%20lata." class="btn-cta" target="_blank" rel="noopener">Encargar por WhatsApp</a>
+  </div>
+
+  <footer>
+    <span class="footer-logo">VERA</span>
+    <span class="footer-text">Cosmética Ancestral · Córdoba, Argentina</span>
+    <a href="https://www.instagram.com/somosvera.cordoba/" class="footer-text" target="_blank" rel="noopener">@somosvera.cordoba</a>
+    <span class="footer-text">© 2026 VERA</span>
+  </footer>
+
+</body>
+</html>
