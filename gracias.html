@@ -211,6 +211,7 @@
   </footer>
 
   <script>
+  (function(){
     // Lee parámetros que manda MercadoPago en la URL de retorno:
     // ?collection_id=XXX&collection_status=approved&payment_id=XXX&status=approved&...
     var params  = new URLSearchParams(window.location.search);
@@ -223,8 +224,15 @@
     sessionStorage.removeItem('vera_shipping');
 
     var WA_NUMBER   = '5493515585046';
+    var cant   = params.get('cant') || '1';
+    var total  = params.get('total') ? '$' + Number(params.get('total')).toLocaleString('es-AR') : '';
+    var nombre = params.get('nombre') || '';
+    var entregaTxt = shipping === 'retiro' ? 'retiro en Budapets' : (shipping === 'interior' ? 'envío al resto del país' : 'envío en Córdoba');
     var WA_MSG_ENVIO = encodeURIComponent(
-      'Hola! Acabo de pagar por MercadoPago (ID: ' + paymentId + ') y quiero coordinar el envío de mi VERA.'
+      'Hola! ' + (nombre ? 'Soy ' + nombre + '. ' : '') +
+      'Ya realicé mi pago por Mercado Pago' + (paymentId ? ' (ID ' + paymentId + ')' : '') + '. ' +
+      'Pedido: ' + cant + (cant === '1' ? ' lata' : ' latas') + ' de VERA' + (total ? ', total ' + total : '') + '. ' +
+      'Entrega: ' + entregaTxt + '. Te mando el comprobante.'
     );
     var WA_LINK = 'https://wa.me/' + WA_NUMBER + '?text=' + WA_MSG_ENVIO;
 
@@ -266,15 +274,15 @@
           <span class="next-steps-title">Cómo retirar tu lata</span>
           <div class="step">
             <div class="step-num">1</div>
-            <p class="step-text"><strong>Presentate en Budapets</strong><br>Av. Gauss 5308, Villa Belgrano, Córdoba. Podés ir el mismo día de la compra o en los próximos días.</p>
+            <p class="step-text"><strong>Mandanos el comprobante por WhatsApp</strong><br>Con el botón de abajo: el mensaje ya va armado con tu pedido.</p>
           </div>
           <div class="step">
             <div class="step-num">2</div>
-            <p class="step-text"><strong>Mostrá el comprobante de pago</strong><br>El resumen de MercadoPago te llega al mail. Con eso es suficiente.</p>
+            <p class="step-text"><strong>Presentate en Budapets</strong><br>Av. Gauss 5308, Villa Belgrano, Córdoba. Podés ir el mismo día de la compra o en los próximos días.</p>
           </div>
           <div class="step">
             <div class="step-num">3</div>
-            <p class="step-text"><strong>¿Dudas?</strong><br>Escribinos por WhatsApp y te ayudamos al toque.</p>
+            <p class="step-text"><strong>Mostrá el comprobante de pago</strong><br>El resumen de MercadoPago te llega al mail. Con eso es suficiente.</p>
           </div>
           <div class="mapa-box" id="mapa-retiro" style="display:block; margin-top:24px;">
             <iframe
@@ -287,36 +295,40 @@
           </div>
         </div>
 
-        <a href="https://wa.me/${WA_NUMBER}" class="btn-primary" target="_blank" rel="noopener">Escribirnos por WhatsApp</a>
+        <a href="${WA_LINK}" class="btn-primary" target="_blank" rel="noopener">Avisar mi pago por WhatsApp</a>
         <a href="/" class="link-home">← Volver al inicio</a>
       `;
     } else {
+      var envioTxt = shipping === 'interior'
+        ? 'Te pasamos la cotización del envío por correo a tu localidad y lo despachamos apenas lo confirmás.'
+        : 'Te lo mandamos por Uber Moto en el día. El envío sale entre $3.000 y $9.000 según la zona de Córdoba y se paga aparte.';
       card.innerHTML = `
         <div class="check-icon">✦</div>
         <span class="label-small">Pago confirmado</span>
         <h1>¡Gracias por tu compra!</h1>
-        <p class="subtitle">Tu pago fue procesado. En los próximos minutos te contactamos por WhatsApp para coordinar el envío.</p>
+        <p class="subtitle">Último paso: avisanos por WhatsApp con el botón de abajo. El mensaje ya va armado con tu pedido.</p>
 
         <div class="next-steps">
           <span class="next-steps-title">Lo que pasa ahora</span>
           <div class="step">
             <div class="step-num">1</div>
-            <p class="step-text"><strong>Te contactamos nosotros</strong><br>En minutos te escribimos por WhatsApp al número con el que hiciste la compra para coordinar el envío por Uber Moto.</p>
+            <p class="step-text"><strong>Avisanos por WhatsApp</strong><br>Tocá el botón y mandanos el comprobante de Mercado Pago.</p>
           </div>
           <div class="step">
             <div class="step-num">2</div>
-            <p class="step-text"><strong>Confirmamos la dirección</strong><br>El costo del envío lo coordinamos juntos. Depende de la distancia dentro de Córdoba.</p>
+            <p class="step-text"><strong>Confirmamos la dirección</strong><br>${envioTxt}</p>
           </div>
           <div class="step">
             <div class="step-num">3</div>
-            <p class="step-text"><strong>Tu lata sale el mismo día</strong><br>Si el pedido llega antes de las 17 hs, lo enviamos el mismo día.</p>
+            <p class="step-text"><strong>Sale tu pedido</strong><br>${shipping === 'interior' ? 'Te pasamos el número de seguimiento del correo.' : 'Si nos avisás antes de las 17 hs, sale el mismo día.'}</p>
           </div>
         </div>
 
-        <a href="${WA_LINK}" class="btn-primary" target="_blank" rel="noopener">Coordinar por WhatsApp ahora</a>
+        <a href="${WA_LINK}" class="btn-primary" target="_blank" rel="noopener">Avisar mi pago por WhatsApp</a>
         <a href="/" class="link-home">← Volver al inicio</a>
       `;
     }
+  })();
   </script>
 
 </body>

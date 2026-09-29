@@ -693,6 +693,29 @@
       margin-top: 24px;
     }
 
+    /* ── COMPRA DIRECTA ── */
+    .buy-box { max-width: 520px; margin: 0 auto; text-align: left; border: 1px solid rgba(184,151,58,0.22); background: rgba(255,255,255,0.03); padding: 36px 32px; }
+    .buy-row { margin-bottom: 26px; }
+    .buy-label { display:block; font-family: var(--sans); font-size: 0.58rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+    .qty { display:flex; align-items:center; gap: 0; border: 1px solid rgba(184,151,58,0.35); width: max-content; }
+    .qty button { background: none; border: none; color: var(--gold-light); font-size: 1.2rem; width: 44px; height: 44px; cursor: pointer; }
+    .qty span { min-width: 44px; text-align:center; font-family: var(--serif); font-size: 1.4rem; color: var(--white-warm); }
+    .ship-opt { display:flex; gap: 12px; align-items:flex-start; padding: 12px 14px; border: 1px solid rgba(184,151,58,0.15); margin-bottom: 8px; cursor:pointer; }
+    .ship-opt input { margin-top: 3px; accent-color: #B8973A; }
+    .ship-opt strong { display:block; font-family: var(--sans); font-size: 0.74rem; font-weight: 500; color: var(--white-warm); }
+    .ship-opt small { font-family: var(--sans); font-size: 0.66rem; font-weight: 300; color: rgba(250,248,244,0.5); line-height: 1.6; }
+    .buy-input { width:100%; background: transparent; border: 1px solid rgba(184,151,58,0.25); color: var(--white-warm); font-family: var(--sans); font-size: 0.8rem; padding: 12px 14px; }
+    .buy-total { display:flex; justify-content: space-between; align-items: baseline; border-top: 1px solid rgba(184,151,58,0.2); padding-top: 20px; margin-bottom: 22px; }
+    .buy-total span { font-family: var(--sans); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(250,248,244,0.5); }
+    .buy-total b { font-family: var(--serif); font-size: 2rem; font-weight: 400; color: var(--gold-light); }
+    .buy-btn { display:block; width:100%; text-align:center; background: var(--gold); color: var(--dark-bg); border: none; font-family: var(--sans); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; padding: 18px; cursor: pointer; text-decoration: none; }
+    .buy-btn:hover { background: var(--gold-light); }
+    .buy-btn.alt { background: #25D366; color: #fff; margin-top: 12px; }
+    .buy-step2 { display:none; margin-top: 22px; padding: 18px; background: rgba(184,151,58,0.08); font-family: var(--sans); font-size: 0.74rem; line-height: 1.8; color: rgba(250,248,244,0.75); }
+    .buy-step2 b { color: var(--gold-light); }
+    .buy-note { font-family: var(--sans); font-size: 0.64rem; color: rgba(250,248,244,0.4); margin-top: 14px; line-height: 1.7; text-align:center; }
+    @media (max-width: 560px) { .buy-box { padding: 28px 18px; } }
+
     /* ── MODO DE USO ── */
     #uso {
       background-color: var(--white-warm);
@@ -1578,9 +1601,73 @@
         Dos ingredientes, sin vueltas. Pedí la tuya y sentí la diferencia.
       </p>
 
-      <a href="https://wa.me/5493515585046?text=Hola!%20Quiero%20comprar%20mi%20lata%20de%20VERA." class="btn-cta fade-in" target="_blank" rel="noopener">
-        Conseguí tu lata
-      </a>
+      <div class="buy-box fade-in" id="comprar">
+        <div class="buy-row">
+          <span class="buy-label">Cantidad de latas</span>
+          <div class="qty">
+            <button type="button" onclick="veraQty(-1)" aria-label="Restar">−</button>
+            <span id="vera-qty">1</span>
+            <button type="button" onclick="veraQty(1)" aria-label="Sumar">+</button>
+          </div>
+        </div>
+        <div class="buy-row">
+          <span class="buy-label">Entrega</span>
+          <label class="ship-opt"><input type="radio" name="vera-ship" value="envio" checked><span><strong>Envío en Córdoba · en el día</strong><small>Por Uber Moto. Entre $3.000 y $9.000 según la zona, se paga aparte y lo coordinamos por WhatsApp.</small></span></label>
+          <label class="ship-opt"><input type="radio" name="vera-ship" value="retiro"><span><strong>Retiro sin cargo en Budapets</strong><small>Av. Carlos F. Gauss 5308, Villa Belgrano. Lun a vie 9:30–13:30 y 17–21 · Sáb 9:30–13:30.</small></span></label>
+        </div>
+        <div class="buy-row">
+          <span class="buy-label">Tu nombre</span>
+          <input class="buy-input" id="vera-name" type="text" placeholder="Para identificar tu pago" autocomplete="name">
+        </div>
+        <div class="buy-total"><span>Total</span><b id="vera-total">$20.000</b></div>
+        <button type="button" class="buy-btn" onclick="veraPay()">Pagar con Mercado Pago</button>
+        <div class="buy-step2" id="vera-step2">
+          Se abrió Mercado Pago en otra pestaña. Ingresá el monto <b id="vera-amount">$20.000</b> y completá el pago.<br>
+          Cuando termines, volvé acá y avisanos:
+          <a href="#" class="buy-btn alt" id="vera-paid" onclick="return veraPaid()">Ya pagué · Avisar por WhatsApp</a>
+        </div>
+        <p class="buy-note">¿Preferís consultar antes? <a href="https://wa.me/5493515585046?text=Hola!%20Quiero%20comprar%20mi%20lata%20de%20VERA." target="_blank" rel="noopener" style="color:rgba(212,185,106,0.8);">Escribinos por WhatsApp</a></p>
+      </div>
+
+      <!-- ── Compra desde otra provincia ── -->
+      <div class="buy-box fade-in" id="comprar-interior" style="margin-top:28px;">
+        <p class="buy-label" style="margin-bottom:6px; font-weight:600;">¿Estás fuera de Córdoba?</p>
+        <p class="buy-note" style="margin:0 0 18px; text-align:left; line-height:1.55;">
+          Te la mandamos a todo el país por Mercado Libre, con el <strong>envío incluido</strong>,
+          <strong>cuotas sin interés</strong> y la protección de la plataforma.
+        </p>
+        <a class="buy-btn alt" id="vera-ml" href="https://meli.la/2T2ipUH" target="_blank" rel="noopener" onclick="if(window.gtag)gtag('event','click_mercadolibre');">Comprar en Mercado Libre</a>
+      </div>
+
+      <script>
+        (function(){
+          var PRECIO = 20000;
+          var MP_LINK = 'https://link.mercadopago.com.ar/somosvera';
+          var qty = 1;
+          function fmt(n){ return '$' + n.toLocaleString('es-AR'); }
+          function ship(){ var r=document.querySelector('input[name="vera-ship"]:checked'); return r ? r.value : 'envio'; }
+          function render(){
+            document.getElementById('vera-qty').textContent = qty;
+            document.getElementById('vera-total').textContent = fmt(qty*PRECIO);
+            document.getElementById('vera-amount').textContent = fmt(qty*PRECIO);
+          }
+          window.veraQty = function(d){ qty = Math.min(10, Math.max(1, qty+d)); render(); };
+          window.veraPay = function(){
+            try { sessionStorage.setItem('vera_shipping', ship()); } catch(e){}
+            render();
+            document.getElementById('vera-step2').style.display='block';
+            if (window.gtag) gtag('event','begin_checkout',{value: qty*PRECIO, currency:'ARS'});
+            window.open(MP_LINK, '_blank', 'noopener');
+          };
+          window.veraPaid = function(){
+            var name = (document.getElementById('vera-name').value || '').trim();
+            var p = new URLSearchParams({status:'approved', external_reference: ship(), cant: qty, total: qty*PRECIO, nombre: name});
+            window.location.href = '/gracias.html?' + p.toString();
+            return false;
+          };
+          render();
+        })();
+      </script>
 
       <span class="cta-disclaimer" style="margin-top:24px;">
         <a href="https://wa.me/5493515585046" style="color:rgba(212,185,106,0.7); text-decoration:none;" target="_blank" rel="noopener">+54 9 351 558 5046</a>
@@ -1609,14 +1696,14 @@
           <span class="envios-icon">◎</span>
           <div>
             <p class="envios-item-title">Córdoba y Gran Córdoba</p>
-            <p class="envios-item-text">Entregas en toda la ciudad, coordinadas por WhatsApp.</p>
+            <p class="envios-item-text">Envío en el día por Uber Moto. Entre $3.000 y $9.000 según la zona.</p>
           </div>
         </div>
         <div class="envios-item">
           <span class="envios-icon">◎</span>
           <div>
             <p class="envios-item-title">Todo el país</p>
-            <p class="envios-item-text">Enviamos por correo o transporte a donde estés.</p>
+            <p class="envios-item-text">Por Mercado Libre, con envío incluido y cuotas sin interés.</p>
           </div>
         </div>
         <div class="envios-item">

@@ -1,0 +1,56 @@
+/* VERA — estilos del blog. Misma identidad que somosvera.com.ar */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --cream:#F0EDE6; --cream-dark:#E4DFD6; --concrete:#D8D4CC; --concrete-bg:#ECEAE4;
+  --charcoal:#2E2B27; --bronze:#4A4137; --bronze-mid:#7A6A55;
+  --gold:#B8973A; --gold-light:#D4B96A; --white-warm:#FAF8F4; --dark-bg:#262320;
+  --serif:'Cormorant Garamond',Georgia,serif; --sans:'Montserrat',Arial,sans-serif;
+  --max-w:720px;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--cream);color:var(--charcoal);-webkit-font-smoothing:antialiased;line-height:1.75}
+
+/* HEADER */
+.blog-head{border-bottom:1px solid var(--concrete);background:var(--white-warm)}
+.blog-head-in{max-width:var(--max-w);margin:0 auto;padding:22px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.blog-logo{font-family:var(--serif);font-size:26px;letter-spacing:.14em;color:var(--bronze);text-decoration:none;font-weight:600}
+.blog-nav a{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--bronze-mid);text-decoration:none;margin-left:22px}
+.blog-nav a:hover{color:var(--gold)}
+
+/* WRAP */
+.wrap{max-width:var(--max-w);margin:0 auto;padding:64px 24px 80px}
+.eyebrow{display:block;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(34px,6vw,52px);line-height:1.12;color:var(--bronze);margin-bottom:18px}
+h2{font-family:var(--serif);font-weight:600;font-size:clamp(24px,4vw,32px);line-height:1.2;color:var(--bronze);margin:48px 0 16px}
+h3{font-family:var(--sans);font-weight:600;font-size:16px;letter-spacing:.02em;color:var(--charcoal);margin:32px 0 10px}
+p{margin-bottom:20px;font-size:16px;font-weight:300;color:#403B35}
+.lead{font-size:19px;font-weight:300;color:var(--bronze-mid);margin-bottom:34px;font-family:var(--serif);line-height:1.6}
+.meta{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--bronze-mid);margin-bottom:40px;padding-bottom:22px;border-bottom:1px solid var(--concrete)}
+ul,ol{margin:0 0 22px 20px}
+li{margin-bottom:9px;font-size:16px;font-weight:300;color:#403B35}
+strong{font-weight:600;color:var(--charcoal)}
+a{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(184,151,58,.35)}
+a:hover{border-bottom-color:var(--gold)}
+blockquote{border-left:2px solid var(--gold-light);padding:6px 0 6px 22px;margin:28px 0;font-family:var(--serif);font-size:20px;font-style:italic;color:var(--bronze)}
+
+/* CTA */
+.cta{background:var(--white-warm);border:1px solid var(--concrete);padding:34px 30px;margin:52px 0 0;text-align:center}
+.cta p{font-family:var(--serif);font-size:21px;color:var(--bronze);margin-bottom:8px}
+.cta small{display:block;font-size:13px;color:var(--bronze-mid);margin-bottom:22px;font-weight:300}
+.btn{display:inline-block;background:var(--bronze);color:var(--cream);padding:15px 38px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;border:none;transition:background .25s}
+.btn:hover{background:var(--charcoal);border:none}
+
+/* LISTADO */
+.post-list{list-style:none;margin:0}
+.post-item{border-bottom:1px solid var(--concrete);padding:30px 0}
+.post-item:first-child{border-top:1px solid var(--concrete)}
+.post-item a{border:none}
+.post-item h2{margin:0 0 8px;font-size:26px}
+.post-item p{margin:0;font-size:15px;color:var(--bronze-mid)}
+.post-date{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:8px}
+
+/* FOOTER */
+.blog-foot{border-top:1px solid var(--concrete);background:var(--white-warm);padding:34px 24px;text-align:center}
+.blog-foot p{font-size:12px;color:var(--bronze-mid);margin:0;letter-spacing:.06em}
+.blog-foot a{color:var(--bronze-mid);border:none}
+@media(max-width:600px){.wrap{padding:44px 20px 60px}.blog-nav a{margin-left:14px;font-size:11px}}
